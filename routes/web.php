@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +15,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::match(['get', 'post'], 'ajax/{action}', function ($action) {
 
-Route::get('/', function () { return view('website.home'); });
+    $controller = app()->make(AjaxController::class);
+
+    if (method_exists($controller, $action)) {
+        return app()->call([$controller, $action]);
+    }
+
+    abort(404, "Method {$action} not found in AjaxController");
+});
+Route::get('/', function () {
+    return view('website.home');
+});
 
 Route::get('/admin', function () {
     return view('dashboard');
@@ -25,8 +38,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('events', App\Http\Controllers\EventController::class);
-    Route::resource('alumni', App\Http\Controllers\AlumniController::class) ->parameters(['alumni' => 'alumni']);;
+    Route::resource('alumni', App\Http\Controllers\AlumniController::class)->parameters(['alumni' => 'alumni']);;
     Route::resource('contributions', App\Http\Controllers\ContributionController::class);
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
