@@ -10,6 +10,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- jQuery AJAX (already included in jQuery, but you can add migrate if needed) -->
     <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body { font-family: 'Arial', sans-serif; }
         .bg-gradient { transition: background 0.3s; }
@@ -19,7 +21,7 @@
 <body>
     @include('website.include.header')
 
-    <main class="py-5">
+    <main class="">
         @yield('content')
     </main>
 

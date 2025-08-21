@@ -15,16 +15,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::match(['get', 'post'], 'ajax/{action}', function ($action) {
 
-    $controller = app()->make(AjaxController::class);
+Route::match(['get', 'post'], 'ajax/{action}', [AjaxController::class, 'handle']);
 
-    if (method_exists($controller, $action)) {
-        return app()->call([$controller, $action]);
-    }
 
-    abort(404, "Method {$action} not found in AjaxController");
-});
 Route::get('/', function () {
     return view('website.home');
 });

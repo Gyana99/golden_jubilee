@@ -1,0 +1,961 @@
+.bg-black {
+    background-color: #1d2025
+}
+
+.text-grey {
+    color: #b1b3b5
+}
+
+.c-button {
+    margin: 0
+}
+
+.inner-top-navigation-career {
+    background-color: #c7c7c7;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    width: 100%
+}
+
+.banner-caption h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 8rem
+}
+
+.banner-caption h2 {
+    font-size: 1.6rem
+}
+
+.banner-caption {
+    position: absolute;
+    left: 20px;
+    bottom: 7rem
+}
+
+.banner-caption p {
+    width: 90%;
+    font-weight: 600
+}
+
+.apply-section,.background-patch,.explore-section {
+    position: relative
+}
+
+.apply-section,.byom__section,.covid__section,.learning--section {
+    padding: 3rem 0
+}
+
+.apply-section h2,.career__heading,.explore-text h2 {
+    font-size: 2rem
+}
+
+.background-patch:before {
+    content: '';
+    position: absolute;
+    right: 791px;
+    top: -70px;
+    width: 300px;
+    height: 765px;
+    background-image: linear-gradient(#f8a432,#d05939,#bd343c);
+    transform: rotate(22deg);
+    z-index: 1
+}
+
+.explore-section:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 74px;
+    height: 100%;
+    width: 651px;
+    z-index: 5;
+    background: url(../../img/Layerimg.png) 0 0/100% no-repeat;
+    display: none
+}
+
+.explore-caption {
+    margin-bottom: 2rem
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    position: inherit
+}
+
+.swiper-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: -5px 4px;
+    padding: 8px
+}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #ccbfbf
+}
+
+.banner__btn {
+    font-size: 1.2rem
+}
+
+.explore-text h2 {
+    font-weight: 700
+}
+
+.benefit-background {
+    background-image: url(../../img/benefit_bg.jpg);
+    position: relative;
+    z-index: 3
+}
+
+.inner-top-navigation h2 {
+    color: #fff;
+    font-weight: 800;
+    padding: 0 1rem
+}
+
+.apply-section .card-img-top {
+    height: 172px;
+    object-fit: cover
+}
+
+.development-section h2 {
+    position: relative;
+    margin: 0 0 2rem;
+    z-index: 2;
+    font-size: 3rem
+}
+
+.development-area {
+    padding: 15rem 0;
+    position: relative
+}
+
+.culture__textarea,.development__card {
+    padding: 2rem;
+    position: relative;
+    border: 4px solid #f7941d;
+    border-image: conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1
+}
+
+.development__card {
+    min-height: 235px;
+    margin-top: 1.5rem
+}
+
+.development__card a {
+    position: absolute;
+    bottom: 27px;
+    left: 32px
+}
+
+.development__card h6 {
+    font-size: 1.13rem
+}
+
+.development__card p {
+    font-size: 1.1rem
+}
+
+.culture__textarea {
+    z-index: 6
+}
+
+.card__date {
+    color: rgba(255,255,255,.45);
+    font-size: .85rem
+}
+
+.card__date span,.card__ribbon {
+    color: rgb(255 255 255)
+}
+
+.card__ribbon {
+    position: absolute;
+    left: -24px;
+    top: 18px;
+    z-index: 1;
+    background: var(--web-color2);
+    padding: 0 30px;
+    transform: rotate(-45deg);
+    font-size: .9rem
+}
+
+.apply__card p {
+    margin: 1rem 0 0
+}
+
+.apply__card h6 {
+    text-align: left;
+    font-size: 1.2rem
+}
+
+.apply__caption {
+    margin: 2rem 0
+}
+
+.apply__caption h2 {
+    display: inline-block;
+    position: relative;
+    margin-right: 3rem;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: -4rem
+}
+
+.apply__caption h2:after {
+    content: '';
+    position: absolute;
+    left: 143px;
+    width: 8px;
+    height: 60px;
+    background: rgb(250 166 52);
+    bottom: -11px
+}
+
+.apply__card {
+    padding: 0;
+    height: 375px;
+    background: 0 0;
+    border: 4px solid #f7941d;
+    border-image: conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1;
+    -moz-border-image: -moz-conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1;
+    -webkit-border-image: -webkit-conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1;
+    -o-border-image: -o-conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1;
+    -ms-border-image: -ms-conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1
+}
+
+.border_none {
+    border-bottom: 0!important
+}
+
+.btn {
+    padding: .3rem 1.3rem;
+    border-radius: 6px
+}
+
+.navigation-career {
+    padding-bottom: 3rem
+}
+
+.apply__caption span {
+    position: absolute;
+    top: -8px;
+    display: inline-block
+}
+
+.recruitment__fraud__section {
+    background: #052c53;
+    padding: 3rem 0
+}
+
+.recruitment__fraud__section h2 {
+    font-size: calc(30px + (40 - 30) * (100vw - 375px) / (1920 - 375))
+}
+
+.recruitment__fraud__section a {
+    font-weight: 600;
+    margin-top: 1rem;
+    display: inline-flex
+}
+
+.recruitment__fraud__section a:hover {
+    color: #118fbb!important
+}
+
+.recruitment__fraud__section .circle--btn {
+    transform: rotate(-90deg);
+    margin-left: 1rem;
+    font-size: calc(16px + (20 - 16) * (100vw - 375px) / (1920 - 375));
+    transition: .25s
+}
+
+.recruitment__fraud__icon {
+    display: none
+}
+
+.career__card {
+    position: relative;
+    transition: .2s;
+    width: 100%
+}
+
+.career__card a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3
+}
+
+.career__heading {
+    font-weight: 500;
+    margin-bottom: 0
+}
+
+.learning--section {
+    position: relative;
+    z-index: 3
+}
+
+.career__card__body {
+    padding: 1.5rem 0;
+    min-height: 170px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.byom-items .career__card__body {
+    min-height: 300px
+}
+
+.learning--section .career__heading {
+    width: 180px
+}
+
+.career__card__img {
+    width: 100%;
+    height: 200px;
+    background: #c1c1c1;
+    position: relative;
+    border-radius: 30px;
+}
+
+.career__card__img img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.card__caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px
+}
+
+.caption--bg .card__caption {
+    background:#223f99d4;
+}
+
+.caption--bg:hover .card__title,.caption--bg:hover .learn__more {
+    color: var(--web-color1);
+}
+
+
+.career__card__img .card__caption {
+    padding: 4px 12px;
+    color: rgba(255,255,255,.85);
+    border-radius: .2rem;
+    font-weight: 600;
+}
+
+.learn__more {
+    font-weight: 500;
+    color: var(--web-color3);
+    bottom: 1.3rem;
+    display: inline-flex;
+    margin-top: 1.5rem;
+}
+
+.learn__more:hover {
+    color: var(--web-color1);
+}
+
+.career__card__body .card__descrip {
+    margin-top: .5rem;
+    margin-bottom: 0
+}
+
+.card__image {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 4px solid #ea9e37;
+    position: relative;
+    bottom: -40px
+}
+
+.card__image img,.img-grid {
+    width: 100%
+}
+
+.covid__card__arrow {
+    display: none;
+    position: absolute;
+    right: 30px;
+    top: 15px
+}
+
+.byom__section,.card__arrow,.covid__card,.covid__section {
+    position: relative
+}
+
+.covid__card__arrow .swiper-button-next:focus,.covid__card__arrow .swiper-button-prev:focus,.covid__pagination .swiper-pagination-bullet:focus {
+    outline: 0
+}
+
+.covid__pagination .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    margin: 2px!important;
+    background: #000
+}
+
+.byom__section,.covid__section {
+    padding-bottom: 5.5rem
+}
+
+.byom__card__arrow .swiper-button-next,.byom__card__arrow .swiper-button-prev,.covid__card__arrow .swiper-button-next,.covid__card__arrow .swiper-button-prev {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 3px solid #333;
+    display: block;
+    border-radius: 3px 4px;
+    background-image: none;
+    transform: rotate(45deg);
+    margin: 0 10px
+}
+
+.covid__card__arrow .swiper-button-prev {
+    border-color: transparent transparent #908f8f #908f8f;
+    left: -35px;
+    position: absolute
+}
+
+.covid__card__arrow .swiper-button-next {
+    border-color: #908f8f #908f8f transparent transparent;
+    right: -25px;
+    position: absolute
+}
+
+.blog__card__arrow .swiper-button-next:focus,.covid__card__arrow .swiper-button-next:hover {
+    outline: 0;
+    border-color: #d7182a #d7182a transparent transparent
+}
+
+.covid__card__arrow .swiper-button-prev:focus {
+    outline: 0;
+    border-color: transparent transparent #d7182a #d7182a
+}
+
+.covid__card {
+    display: block;
+    box-shadow: none;
+    border: none;
+    height: auto;
+    border-radius: .5rem;
+    overflow: hidden;
+    min-height: 270px
+}
+
+.covid__descrip {
+    padding: 2.8rem 2rem;
+    background: #333;
+    color: #fff
+}
+
+.covid__pagination .swiper-pagination-bullet-active {
+    background: #118fbb
+}
+
+.covid__pagination {
+    bottom: 40px!important
+}
+
+.covid__card .card__icon {
+    font-size: 2rem;
+    color: #d7182a
+}
+
+.covid__card .covid__descrip p {
+    margin-bottom: 30px;
+    min-height: 105px
+}
+
+.covid__descrip .fighter__name {
+    margin-bottom: 0;
+    font-size: 1rem
+}
+
+.covid__descrip .fighter__degin {
+    color: #717171;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center
+}
+
+.card__arrow,.covid__descrip .card__arrow {
+    transform: rotate(180deg);
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer
+}
+
+.card__arrow {
+    opacity: 1
+}
+
+.covid__descrip .card__arrow {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    transition: .2s;
+    opacity: 0;
+    display: none
+}
+
+.covid__card a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0
+}
+
+.byom__card__arrow .swiper-button-prev {
+    border-color: transparent transparent #908f8f #908f8f;
+    left: -35px;
+    position: absolute
+}
+
+.byom__card__arrow .swiper-button-next {
+    border-color: #908f8f #908f8f transparent transparent;
+    right: -25px;
+    position: absolute
+}
+
+.byom__card__arrow .swiper-button-next:focus,.byom__card__arrow .swiper-button-next:hover {
+    outline: 0;
+    border-color: #d7182a #d7182a transparent transparent
+}
+
+.byom__card__arrow .swiper-button-prev:focus {
+    outline: 0;
+    border-color: transparent transparent #d7182a #d7182a
+}
+
+.byom__section {
+    background: #fff
+}
+
+.byom__card__arrow {
+    display: none
+}
+
+.career__date {
+    color: #adabab
+}
+
+.item--aboutEmployee {
+    width: 100%;
+    height: 520px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 2;
+    margin-top: 0px;
+    overflow: hidden;
+    align-items: center
+}
+
+.item--aboutEmployee .csm__stat {
+    padding: 6rem 0;
+    position: absolute;
+    z-index: 1;
+    /* background: rgb(17 143 187 / 90%); */
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+    color: rgba(255,255,255,.8);
+    display: none;
+
+}
+
+.img-grid__middle {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.white--bg {
+    background: #fff!important
+}
+
+.img-grid__item img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    font-size: 11px;
+    color: #b7b7b7;
+    text-align: left;
+    filter: grayscale(.3)
+}
+
+.img-grid__item {
+    -webkit-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+    background: #e0e0e0;
+    flex: calc(calc(100% - 20px)/ 5);
+    min-height: 47px;
+    margin: 2px
+}
+
+.fadein {
+    -webkit-animation: .3s fadeIn;
+    animation: .3s fadeIn
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: .4;
+        transform: scale(.5)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: .4;
+        transform: scale(.5)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+.walkin-info-icon {
+    width: 100px;
+    margin-bottom: 2rem;
+    fill: #5d5d5d
+}
+
+@media (min-width: 768px) {
+    .card__image,.covid__card,.swiper-container {
+        position:relative
+    }
+
+    .banner-caption {
+        left: 100px;
+        bottom: 12rem
+    }
+
+    .banner-caption h1 {
+        font-size: 4rem;
+        margin-bottom: 6rem
+    }
+
+    .explore-section:after {
+        display: block;
+        top: 256px;
+        width: 377px
+    }
+
+    .swiper-pagination-bullet {
+        display: none!important
+    }
+
+    .apply__card {
+        min-height: 308px
+    }
+
+    .background-patch:before {
+        width: 121px;
+        right: 168px;
+        transform: rotate(11deg)
+    }
+
+    .apply-section h2,.career__heading,.explore-text h2 {
+        font-size: 3rem
+    }
+
+    .apply-section,.byom__section,.covid__section,.learning--section,.lifeatcsm__section,.recruitment__fraud__section {
+        padding: 4rem 0
+    }
+
+    .card__image img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%
+    }
+
+    .covid__card {
+        display: flex;
+        height: 100%;
+        box-shadow: 0 1px 5px #ccc;
+        border-radius: .5rem;
+        overflow: hidden;
+        border: 1px solid #efefef;
+        min-height: 270px;
+        width: 100%
+    }
+
+    .covid__descrip {
+        padding: 1.5rem 2rem;
+        width: 500px;
+        margin-left: -1px;
+        flex: 0 0 60%
+    }
+
+    .card__image {
+        background: #bfbfbf;
+        border-radius: 0;
+        width: auto;
+        height: 280px;
+        overflow: inherit;
+        margin: 0 auto;
+        border: none;
+        bottom: 0;
+        flex: 0 0 40%
+    }
+
+    .covid__card__arrow {
+        display: block
+    }
+
+    .byom__card__arrow {
+        position: absolute;
+        right: 30px;
+        top: 15px;
+        display: block
+    }
+
+    .banner-caption p {
+        width: 500px
+    }
+
+    .banner-caption h2 {
+        font-size: 2rem
+    }
+
+    .learning--section .career__heading {
+        width: auto
+    }
+
+    .recruitment__fraud__section a {
+        margin-top: 1.2rem
+    }
+
+    .recruitment__fraud__icon {
+        display: block;
+        width: 170px;
+        height: 170px
+    }
+
+    .recruitment__fraud__icon img {
+        width: 100%
+    }
+
+    .item--aboutEmployee {
+        height: 685px
+    }
+
+    .img-grid {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1
+    }
+
+    .img-grid__item {
+        flex: calc(calc(100% - 80px)/ 8);
+        margin: 5px
+    }
+}
+
+@media (min-width: 992px) {
+    .background-patch:before {
+        width:138px;
+        right: 245px;
+        transform: rotate(18deg)
+    }
+
+    .explore-section:after {
+        top: 87px;
+        width: 499px
+    }
+
+    .apply__card {
+        height: 330px
+    }
+}
+
+@media (min-width: 1024px) {
+    .explore-section:after {
+        top:87px;
+        width: 499px
+    }
+}
+
+@media (min-width: 1200px) {
+    .banner-caption h1 {
+        font-size:5rem;
+        margin-bottom: 7rem;
+        font-weight: 800
+    }
+
+    .banner-caption {
+        left: 200px
+    }
+
+    .background-patch:before {
+        transform: rotate(20deg);
+        width: 167px
+    }
+
+    .explore-section:after {
+        top: 65px;
+        width: 549px
+    }
+
+    .covid__descrip {
+        width: 440px
+    }
+
+    .covid__card:hover {
+        box-shadow: 2px 3px 30px rgba(0,0,0,.2)
+    }
+
+    .career__card__body {
+        min-height: 250px
+    }
+
+    .background-patch {
+        overflow: hidden
+    }
+
+    .img-grid__middle {
+        background: #fff;
+        padding: 0 5px
+    }
+
+    .item--aboutEmployee {
+        height: 555px;
+        margin-top: 0px
+    }
+
+    .img-grid__item {
+        background: rgb(247 247 247);
+        flex: calc(calc(100% - 170px)/ 17);
+        margin: 5px;
+        height: 45px;
+        min-height: auto
+    }
+
+    .item--aboutEmployee .csm__stat {
+        padding: 0;
+        background: 0 0;
+        min-height: auto;
+        top: auto;
+        bottom: auto;
+        color: #333;
+        width: 450px;
+        display: block;
+    }
+
+    .grid__item--108,.grid__item--109,.grid__item--110,.grid__item--111,.grid__item--112,.grid__item--113,.grid__item--114,.grid__item--126,.grid__item--130,.grid__item--41,.grid__item--45,.grid__item--57,.grid__item--58,.grid__item--59,.grid__item--60,.grid__item--61,.grid__item--62,.grid__item--63,.grid__item--73,.grid__item--74,.grid__item--75,.grid__item--76,.grid__item--77,.grid__item--78,.grid__item--79,.grid__item--80,.grid__item--91,.grid__item--92,.grid__item--93,.grid__item--94,.grid__item--95,.grid__item--96,.grid__item--97 {
+        opacity: 0
+    }
+}
+
+@media (min-width: 1366px) {
+    .background-patch:before {
+        width:222px;
+        right: 300px;
+        top: -60px
+    }
+
+    .banner-caption {
+        bottom: 8rem
+    }
+}
+
+@media (min-width: 1440px) {
+    .banner-caption {
+        bottom:14rem
+    }
+
+    .item--aboutEmployee {
+        height: 735px
+    }
+
+    .img-grid__item {
+        height: 63px
+    }
+
+    .img-grid__item img {
+        height: 100%
+    }
+}
+
+@media (min-width: 1920px) {
+    .banner-caption h1 {
+        margin-bottom:11rem
+    }
+
+    .banner-caption {
+        left: 395px
+    }
+
+    .explore-section:after {
+        width: 572px;
+        top: 66px;
+        height: 575px
+    }
+
+    .background-patch:before {
+        right: 282px;
+        top: -78px;
+        width: 300px;
+        height: 795px
+    }
+}
+
+.lifeatcsm__section {
+    background: #eee
+}
