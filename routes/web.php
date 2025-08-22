@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,9 @@ Route::get('/', function () {
     return view('website.home');
 });
 
-Route::get('/admin', function () {
+Route::match(['post','get'],'event-deatils',[App\Http\Controllers\EventController::class,'getDataForView']);
+
+Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

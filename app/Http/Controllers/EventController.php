@@ -61,4 +61,15 @@ class EventController extends Controller
         $event->delete();
         return redirect()->route('events.index')->with('success', 'Event deleted successfully.');
     }
+    public function getDataForView()
+    {
+        $events = \App\Models\Event::orderBy('start_datetime', 'desc')->get();
+        $now = now();
+
+        $completed = $events->filter(fn($e) => $e->end_datetime < $now);
+        $ongoing   = $events->filter(fn($e) => $e->start_datetime <= $now && $e->end_datetime >= $now);
+        $upcoming  = $events->filter(fn($e) => $e->start_datetime > $now);
+
+        return view('website.event-details', compact('completed', 'ongoing', 'upcoming'));
+    }
 }
