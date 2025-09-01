@@ -90,4 +90,7 @@ class ContributionController extends Controller
         $contribution->delete();
         return redirect()->route('contributions.index')->with('success', 'Contribution deleted.');
     }
+    public function contributionDeatils() {
+        return view('website.contributiondeatils');
+    }
 }

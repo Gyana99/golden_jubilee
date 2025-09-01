@@ -16,6 +16,8 @@ class Alumni extends Model
         'passout_year',
         'email',
         'phone',
-        'photo'
+        'photo',
+        'status',
+        'alumni_id'
     ];
 }

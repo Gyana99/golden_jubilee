@@ -12,13 +12,16 @@
 </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="{{ url('event-deatils') }}">କାର୍ୟକ୍ରମ</a>
+          <a class="nav-link {{ request()->is('event-deatils') ? 'active' : '' }}" href="{{ url('event-deatils') }}">କାର୍ୟକ୍ରମ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="{{ url('contribution-deatils') }}">ଦାନ</a>
+          <a class="nav-link {{ request()->is('contribution-deatils') ? 'active' : '' }}" href="{{ url('contribution-deatils') }}">ଦାନ</a>
         </li>
+         <!-- <li class="nav-item"> -->
+          <!-- <a class="nav-link {{ request()->is('writing') ? 'active' : '' }}" href="{{ url('writing') }}">ଲେଖନ</a> -->
+        <!-- </li> -->
          <li class="nav-item">
-          <a class="nav-link {{ request()->is('contact') ? 'active' : '' }}" href="{{ url('writing') }}">ଲେଖନ</a>
+          <a class="nav-link {{ request()->is('alumni-registration') ? 'active' : '' }}" href="{{ url('alumni-registration') }}">ପୂର୍ବ ଛାତ୍ରଛାତ୍ରୀ ପଞ୍ଜିକରଣ</a>
         </li>
 
       </ul>
