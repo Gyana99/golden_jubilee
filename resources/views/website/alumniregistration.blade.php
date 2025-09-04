@@ -1,7 +1,8 @@
 @extends('website.layout')
 
-@section('title', 'Home | MyWebsite')
+@section('title', '🎓 Alumni Registration | UGNB')
 <link rel="stylesheet" href="{{ asset('css/website/career.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 @section('content')
 <!-- Alumni Registration Form -->
@@ -21,7 +22,7 @@
 
             <!-- Email -->
             <div class="mb-3">
-                <label class="form-label fw-bold">Email</label>
+                <label class="form-label fw-bold">Email *</label>
                 <input type="email" name="email" id="email" class="form-control" placeholder="Enter email">
                 <div class="invalid-feedback">Please enter a valid email.</div>
             </div>
@@ -30,14 +31,14 @@
             <div class="mb-3">
                 <label class="form-label fw-bold">Phone</label>
                 <input type="text" name="phone" id="phone" class="form-control" placeholder="Enter phone number">
-                <div class="invalid-feedback">Phone number must be 8 to 16 digits.</div>
+                <div class="invalid-feedback">Phone number must be 10 digits.</div>
             </div>
 
             <!-- Passout Year -->
             <div class="mb-3">
                 <label class="form-label fw-bold">Passout Year *</label>
-                <input type="number" name="passout_year" id="passout_year" class="form-control" placeholder="e.g., 2018">
-                <div class="invalid-feedback">Passout Year is required.</div>
+                <input type="number" name="passout_year" id="passout_year" class="form-control" placeholder="Between 1973 to 2025" min="1973" max="{{ date('Y') }}">
+                <div class="invalid-feedback">Passout Year is required.(1973–2025 as of now)</div>
             </div>
 
             <!-- Photo Upload -->
@@ -72,8 +73,14 @@
             <!-- Submit -->
             <button type="submit" class="btn-submit">💾 Save Alumni</button>
         </form>
+        <div id="loaderContainer" class="loader-container" style="display: none;">
+            <div class="loader"></div>
+            <p style="text-align: center;">Processing your registration...</p>
+        </div>
     </div>
 </div>
+
+
 
 <!-- CSS -->
 <style>
@@ -190,78 +197,131 @@
             line-height: 1.3;
         }
     }
+
+    /* New CSS for loader */
+    .loader-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 0 140px 40px;
+    }
+
+    .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        /* Blue color for the spinner */
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Utility class to hide elements */
+    .d-none {
+        display: none !important;
+    }
 </style>
 
 
-<!-- JS Validation + Live Preview -->   
+<!-- JS Validation + Live Preview -->
 <script>
     document.getElementById('alumniForm').addEventListener('submit', function(e) {
-        let valid = true;
+        // Stop default first
+        // Get elements
+        const form = document.getElementById('alumniForm');
+        const loaderContainer = document.getElementById('loaderContainer');
+        e.preventDefault();
 
-        // Name
+        // ✅ Step 1: Name
         const name = document.getElementById('name');
         if (name.value.trim() === '') {
             name.classList.add('is-invalid');
             name.focus();
-            valid = false;
+            return false; // stop here
         } else {
             name.classList.remove('is-invalid');
         }
 
-        // Email
+        // ✅ Step 2: Email
         const email = document.getElementById('email');
-        if (email.value.trim() !== '') {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // <-- fixed
-            if (!emailPattern.test(email.value.trim())) {
-                email.classList.add('is-invalid');
-                email.focus();
-                valid = false;
-            } else {
-                email.classList.remove('is-invalid');
-            }
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email.value.trim() === '' || !emailPattern.test(email.value.trim())) {
+            email.classList.add('is-invalid');
+            email.focus();
+            return false;
+        } else {
+            email.classList.remove('is-invalid');
         }
 
-
-        // Phone
+        // ✅ Step 3: Phone (optional but valid if filled)
         const phone = document.getElementById('phone');
         if (phone.value.trim() !== '') {
             const phonePattern = /^[0-9]{10}$/;
             if (!phonePattern.test(phone.value.trim())) {
                 phone.classList.add('is-invalid');
                 phone.focus();
-                valid = false;
+                return false;
             } else {
                 phone.classList.remove('is-invalid');
             }
+        } else {
+            phone.classList.remove('is-invalid'); // clear if empty
         }
 
-        // Passout Year
+        // ✅ Step 4: Passout Year
         const passoutYear = document.getElementById('passout_year');
+        const currentYear = new Date().getFullYear();
+
         if (passoutYear.value.trim() === '') {
             passoutYear.classList.add('is-invalid');
             passoutYear.focus();
-            valid = false;
+            return false;
+        } else if (
+            isNaN(passoutYear.value) ||
+            passoutYear.value < 1973 ||
+            passoutYear.value > currentYear
+        ) {
+            passoutYear.classList.add('is-invalid');
+            passoutYear.focus();
+            return false;
         } else {
             passoutYear.classList.remove('is-invalid');
         }
 
-        // Photo
+        // ✅ Step 5: Photo
         const photo = document.getElementById('photo');
         if (photo.files.length === 0) {
             photo.classList.add('is-invalid');
-            valid = false;
+            photo.focus();
+            return false;
         } else {
             const allowedTypes = ['image/jpeg', 'image/png'];
             if (!allowedTypes.includes(photo.files[0].type)) {
                 photo.classList.add('is-invalid');
                 photo.focus();
-                valid = false;
+                return false;
             } else {
                 photo.classList.remove('is-invalid');
             }
         }
 
-        if (!valid) e.preventDefault();
+        // ✅ If all validations pass → submit form
+        this.submit();
+        // If validation passes, show loader
+        form.style.display = 'none'; // Hide the form
+        loaderContainer.style.display = 'block'; // Show the loader
     });
 
     // ✅ Live Photo Preview
@@ -277,6 +337,7 @@
         }
     });
 </script>
+
 
 
 
