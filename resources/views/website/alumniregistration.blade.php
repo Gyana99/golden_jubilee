@@ -193,7 +193,7 @@
 </style>
 
 
-<!-- JS Validation + Live Preview -->
+<!-- JS Validation + Live Preview -->   
 <script>
     document.getElementById('alumniForm').addEventListener('submit', function(e) {
         let valid = true;
