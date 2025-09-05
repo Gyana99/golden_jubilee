@@ -95,6 +95,9 @@ class AlumniController extends Controller
             'photo'        => 'required|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
+
+
+
         $data = $request->except('photo');
 
         // Handle photo upload
@@ -216,21 +219,43 @@ class AlumniController extends Controller
 
     public function storeByUser(Request $request)
     {
-        // Handle GET requests
+        // Handle GET
         if ($request->isMethod('GET')) {
             return view('website.alumniregistration');
         }
 
-        // Handle POST requests
+        // Handle POST
+        $data = $request->all();
+
         // Validation
         $request->validate([
             'name'         => 'required|string|max:255',
-            'email'        => 'required|email|unique:alumni,email',
+            'email'        => 'required|email',
             'phone'        => 'nullable|string|max:20',
             'passout_year' => 'required|integer',
             'photo'        => 'required|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
+        // 🔎 Check if alumni already exists
+        $existingAlumni = Alumni::where('name', $data['name'])
+            ->where('email', $data['email'])
+            ->where('passout_year', $data['passout_year'])
+            ->first();
+
+            //dd($existingAlumni->alumni_id);
+
+        if ($existingAlumni) {
+            // Redirect with existing details
+            return redirect()->route('alumni.success')->with([
+                'alumniId' => $existingAlumni->alumni_id,
+                'name'     => $existingAlumni->name,
+                'email'    => $existingAlumni->email,
+                'photo'    => $existingAlumni->photo,
+                'year'     => $existingAlumni->passout_year,
+            ]);
+        }
+
+        // If not exists, create new alumni
         $data = $request->except('photo');
 
         // Handle photo upload
@@ -245,16 +270,16 @@ class AlumniController extends Controller
             $data['photo'] = $filename;
         }
 
-        // 1️⃣ Create the alumni record
+        // 1️⃣ Create new record
         $alumni = Alumni::create($data);
 
-        // 2️⃣ Generate the Alumni ID
+        // 2️⃣ Generate Alumni ID
         $alumniId = 'UGBN' . $alumni->id;
 
-        // 3️⃣ Update the record with the generated Alumni ID
+        // 3️⃣ Update record
         $alumni->update(['alumni_id' => $alumniId]);
 
-        // Send confirmation email
+        // 4️⃣ Send confirmation email
         $details = [
             'name'     => $data['name'],
             'subject'  => 'Registration Successful',
@@ -262,24 +287,28 @@ class AlumniController extends Controller
             'alumniId' => $alumniId
         ];
 
-        if (!empty($data['email'])) {
-            try {
-                Mail::send('emails.test', ['details' => $details], function ($message) use ($details) {
-                    $message->to($details['emailid'])->subject($details['subject']);
-                });
-            } catch (Exception $e) {
-                $error = [ /* ... log data ... */];
-                DB::table('maillog')->insert($error);
-            }
-        } else {
-            $error = [ /* ... log data ... */];
-            DB::table('maillog')->insert($error);
-        }
+        // if (!empty($data['email'])) {
+        //     try {
+        //         Mail::send('emails.test', ['details' => $details], function ($message) use ($details) {
+        //             $message->to($details['emailid'])->subject($details['subject']);
+        //         });
+        //     } catch (\Exception $e) {
+        //         DB::table('maillog')->insert([
+        //             'email' => $data['email'],
+        //             'error' => $e->getMessage(),
+        //             'created_at' => now()
+        //         ]);
+        //     }
+        // }
 
-        // Redirect to a new route with session data
+        // 5️⃣ Redirect with new alumni details
         return redirect()->route('alumni.success')->with([
             'alumniId' => $alumniId,
-            'name'     => $data['name']
+            'name'     => $data['name'],
+            'email'    => $data['email'],
+            'photo'    => $data['photo'],
+            'year'     => $data['passout_year'],
+            'status'   => 'new'
         ]);
     }
     /**
