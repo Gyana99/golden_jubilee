@@ -28,11 +28,13 @@ Route::match(['post','get'],'event-deatils',[App\Http\Controllers\EventControlle
 Route::match(['post','get'],'/alumni-registration',[App\Http\Controllers\AlumniController::class,'storeByUser'])->name('alumni-registration');
 Route::match(['post','get'],'/contribution-deatils',[App\Http\Controllers\ContributionController::class,'contributionDeatils'])->name('contribution-deatils');
 
-
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/school-story', function () {
+    return view('website.schoolstory');
+})->name('school-story');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
