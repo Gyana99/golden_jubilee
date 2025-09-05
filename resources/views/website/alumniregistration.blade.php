@@ -2,6 +2,7 @@
 
 @section('title', '🎓 Alumni Registration | UGNB')
 <link rel="stylesheet" href="{{ asset('css/website/career.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 @section('content')
 <!-- Alumni Registration Form -->
@@ -72,8 +73,14 @@
             <!-- Submit -->
             <button type="submit" class="btn-submit">💾 Save Alumni</button>
         </form>
+        <div id="loaderContainer" class="loader-container" style="display: none;">
+            <div class="loader"></div>
+            <p style="text-align: center;">Processing your registration...</p>
+        </div>
     </div>
 </div>
+
+
 
 <!-- CSS -->
 <style>
@@ -190,6 +197,41 @@
             line-height: 1.3;
         }
     }
+
+    /* New CSS for loader */
+    .loader-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 0 140px 40px;
+    }
+
+    .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        /* Blue color for the spinner */
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Utility class to hide elements */
+    .d-none {
+        display: none !important;
+    }
 </style>
 
 
@@ -197,6 +239,9 @@
 <script>
     document.getElementById('alumniForm').addEventListener('submit', function(e) {
         // Stop default first
+        // Get elements
+        const form = document.getElementById('alumniForm');
+        const loaderContainer = document.getElementById('loaderContainer');
         e.preventDefault();
 
         // ✅ Step 1: Name
@@ -274,6 +319,9 @@
 
         // ✅ If all validations pass → submit form
         this.submit();
+        // If validation passes, show loader
+        form.style.display = 'none'; // Hide the form
+        loaderContainer.style.display = 'block'; // Show the loader
     });
 
     // ✅ Live Photo Preview
@@ -289,10 +337,6 @@
         }
     });
 </script>
-
-
-
-
 
 
 

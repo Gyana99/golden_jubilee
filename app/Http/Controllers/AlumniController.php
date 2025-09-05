@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumni;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
-
 
 class AlumniController extends Controller
 {
@@ -91,8 +91,8 @@ class AlumniController extends Controller
             'name'         => 'required|string|max:255',
             'email'        => 'required|email|unique:alumni,email,' . $alumni->id,
             'phone'        => 'nullable|string|max:20',
-            'passout_year' => 'nullable|integer',
-            'photo'        => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'passout_year' => 'required|integer',
+            'photo'        => 'required|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
         $data = $request->except('photo');
@@ -100,8 +100,8 @@ class AlumniController extends Controller
         // Handle photo upload
         if ($request->hasFile('photo')) {
             // Delete old photo if exists
-            if ($alumni->photo && Storage::exists('public/alumniphoto/' . $alumni->photo)) {
-                Storage::delete('public/alumniphoto/' . $alumni->photo);
+            if ($alumni->photo && Storage::exists('app/public/alumniphoto/' . $alumni->photo)) {
+                Storage::delete('app/public/alumniphoto/' . $alumni->photo);
             }
 
             $extension = $request->file('photo')->getClientOriginalExtension();
@@ -110,7 +110,7 @@ class AlumniController extends Controller
                 . '_' . now()->format('YmdHis')
                 . '.' . $extension;
 
-            $request->file('photo')->storeAs('public/alumniphoto', $filename);
+            $request->file('photo')->storeAs('app/public/alumniphoto', $filename);
 
             $data['photo'] = $filename;
         }
@@ -134,73 +134,153 @@ class AlumniController extends Controller
             ->route('alumni.index')
             ->with('success', 'Alumnus deleted successfully.');
     }
-    public function storeByUser(Request $request, Alumni $alumni)
+    //    public function storeByUser(Request $request, Alumni $alumni)
+    //     {
+    //         if ($request->isMethod('POST')) {
+    //             // Validation
+    //             $request->validate([
+    //                 'name'         => 'required|string|max:255',
+    //                 'email'        => 'required|email|unique:alumni,email', // optional but unique if entered
+    //                 'phone'        => 'nullable|string|max:20',             // optional phone
+    //                 'passout_year' => 'required|integer',
+    //                 'photo'        => 'required|image|mimes:jpg,jpeg,png|max:2048',
+    //             ]);
+
+    //             $data = $request->except('photo');
+    //             // dd();
+    //             // Handle photo upload
+    //             if ($request->hasFile('photo')) {
+    //                 $extension = $request->file('photo')->getClientOriginalExtension();
+    //                 $filename = strtolower(str_replace(' ', '_', $request->name))
+    //                     . '_' . rand(1000, 9999)
+    //                     . '_' . now()->format('YmdHis')
+    //                     . '.' . $extension;
+
+    //                 $request->file('photo')->storeAs('public/alumniphoto', $filename);
+    //                 $data['photo'] = $filename;
+    //             }
+
+    //             // 1️⃣ Create the alumni record
+    //             $alumni = Alumni::create($data);
+
+    //             // 2️⃣ Generate the Alumni ID (UGBN + auto-increment ID)
+    //             $alumniId = 'UGBN' . $alumni->id;
+
+    //             // 3️⃣ Update the record with the generated Alumni ID
+    //             $alumni->update(['alumni_id' => $alumniId]);
+    //             $details = [
+    //                 'name' => $data['name'],       // dynamically from registration form
+    //                 'subject' => 'Registration Successful',
+    //                 'emailid' => $data['email'] ,   // user email
+    //                 'alumniId' => $alumniId
+    //             ];
+    //             if($data['email'] != ''){
+    //             try {
+    //                 Mail::send('emails.test', ['details' => $details], function ($message) use ($details) {
+    //                     $message->to($details['emailid'])          // use 'emailid' key
+    //                         ->subject($details['subject']);    // dynamic subject
+    //                 });
+
+    //                 // return "✅ Mail sent successfully!";
+    //             } catch (\Exception $e) {
+    //                 // Log the error in database
+    //                 $error = [
+    //                     'mailid' => $data['email']??'',
+    //                     'page' => 'user registration',
+    //                     'error' => $e->getMessage(),
+    //                     'created_at' => now(),  // make sure your table has created_at column
+    //                     'updated_at' => now()
+    //                 ];
+
+    //                 DB::table('maillog')->insert($error);
+
+    //                 // return "❌ Mail sending failed: " . $e->getMessage();
+    //             }
+    //             }else{
+    //                 $error = [
+    //                     'mailid' => $data['email']??$data['name'].'@'.$data['passout_year'],
+    //                     'page' => 'user registration',
+    //                     'error' => 'Mail id not Provided',
+    //                     'created_at' => now(),  // make sure your table has created_at column
+    //                     'updated_at' => now()
+    //                 ];
+
+    //                 DB::table('maillog')->insert($error);
+    //             }
+
+    //             return  redirect('alumni-registration');
+    //         }
+
+    //         return view('website.alumniregistration');
+    //     }
+
+    public function storeByUser(Request $request)
     {
-        if ($request->isMethod('POST')) {
-            // Validation
-            $request->validate([
-                'name'         => 'required|string|max:255',
-                'email'        => 'nullable|email|unique:alumni,email', // optional but unique if entered
-                'phone'        => 'nullable|string|max:20',             // optional phone
-                'passout_year' => 'required|integer',
-                'photo'        => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-            ]);
-
-            $data = $request->except('photo');
-            // dd();
-            // Handle photo upload
-            if ($request->hasFile('photo')) {
-                $extension = $request->file('photo')->getClientOriginalExtension();
-                $filename = strtolower(str_replace(' ', '_', $request->name))
-                    . '_' . rand(1000, 9999)
-                    . '_' . now()->format('YmdHis')
-                    . '.' . $extension;
-
-                $request->file('photo')->storeAs('public/alumniphoto', $filename);
-                $data['photo'] = $filename;
-            }
-
-            // 1️⃣ Create the alumni record
-            $alumni = Alumni::create($data);
-
-            // 2️⃣ Generate the Alumni ID (UGBN + auto-increment ID)
-            $alumniId = 'UGBN' . $alumni->id;
-
-            // 3️⃣ Update the record with the generated Alumni ID
-            $alumni->update(['alumni_id' => $alumniId]);
-            $details = [
-                'name' => $data['name'],       // dynamically from registration form
-                'subject' => 'Registration Successful',
-                'emailid' => $data['email'] ,   // user email
-                'alumniId' => $alumniId
-            ];
-
-            try {
-                Mail::send('emails.test', ['details' => $details], function ($message) use ($details) {
-                    $message->to($details['emailid'])          // use 'emailid' key
-                        ->subject($details['subject']);    // dynamic subject
-                });
-
-                // return "✅ Mail sent successfully!";
-            } catch (\Exception $e) {
-                // Log the error in database
-                $error = [
-                    'mailid' => $data['email'],
-                    'page' => 'user registration',
-                    'error' => $e->getMessage(),
-                    'created_at' => now(),  // make sure your table has created_at column
-                    'updated_at' => now()
-                ];
-
-                DB::table('maillog')->insert($error);
-
-                // return "❌ Mail sending failed: " . $e->getMessage();
-            }
-
-            return  redirect('alumni-registration');
+        // Handle GET requests
+        if ($request->isMethod('GET')) {
+            return view('website.alumniregistration');
         }
 
-        return view('website.alumniregistration');
+        // Handle POST requests
+        // Validation
+        $request->validate([
+            'name'         => 'required|string|max:255',
+            'email'        => 'required|email|unique:alumni,email',
+            'phone'        => 'nullable|string|max:20',
+            'passout_year' => 'required|integer',
+            'photo'        => 'required|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
+
+        $data = $request->except('photo');
+
+        // Handle photo upload
+        if ($request->hasFile('photo')) {
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $filename = strtolower(str_replace(' ', '_', $request->name))
+                . '_' . rand(1000, 9999)
+                . '_' . now()->format('YmdHis')
+                . '.' . $extension;
+
+            $request->file('photo')->storeAs('public/alumniphoto', $filename);
+            $data['photo'] = $filename;
+        }
+
+        // 1️⃣ Create the alumni record
+        $alumni = Alumni::create($data);
+
+        // 2️⃣ Generate the Alumni ID
+        $alumniId = 'UGBN' . $alumni->id;
+
+        // 3️⃣ Update the record with the generated Alumni ID
+        $alumni->update(['alumni_id' => $alumniId]);
+
+        // Send confirmation email
+        $details = [
+            'name'     => $data['name'],
+            'subject'  => 'Registration Successful',
+            'emailid'  => $data['email'],
+            'alumniId' => $alumniId
+        ];
+
+        if (!empty($data['email'])) {
+            try {
+                Mail::send('emails.test', ['details' => $details], function ($message) use ($details) {
+                    $message->to($details['emailid'])->subject($details['subject']);
+                });
+            } catch (Exception $e) {
+                $error = [ /* ... log data ... */];
+                DB::table('maillog')->insert($error);
+            }
+        } else {
+            $error = [ /* ... log data ... */];
+            DB::table('maillog')->insert($error);
+        }
+
+        // Redirect to a new route with session data
+        return redirect()->route('alumni.success')->with([
+            'alumniId' => $alumniId,
+            'name'     => $data['name']
+        ]);
     }
     /**
      * Approve or Reject the specified alumnus.
