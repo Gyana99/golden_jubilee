@@ -92,7 +92,6 @@ class AlumniController extends Controller
             'email'        => 'required|email|unique:alumni,email,' . $alumni->id,
             'phone'        => 'nullable|string|max:20',
             'passout_year' => 'required|integer',
-            'photo'        => 'required|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
 
