@@ -205,31 +205,41 @@
         <!-- Card 1 -->
         <div class="alumni-card">
             <div class="alumni-img">
-                <img src="img/profile1.jpg" alt="Alumni Name">
+                <img src="{{ ROOT_URL }}/storage/app/public/img/ajoy_kumar_nayak.jpg" alt="Ajoy Kumar Nayak">
             </div>
-            <h3 class="alumni-name">John Doe</h3>
-            <p class="alumni-designation">Software Engineer</p>
-            <p class="alumni-about">Passionate about technology and innovation, contributing to global projects.</p>
+            <h3 class="alumni-name">Ajoy Kumar Nayak</h3>
+            <p class="alumni-designation">Director</p>
+            <p class="alumni-about">Providing leadership and vision, driving innovation and growth with dedication.</p>
         </div>
 
         <!-- Card 2 -->
         <div class="alumni-card">
             <div class="alumni-img">
-                <img src="img/profile2.jpg" alt="Alumni Name">
+                <img src="{{ ROOT_URL }}/storage/app/public/img/arun_k_samal.jpg" alt="Arun Ku Samal">
             </div>
-            <h3 class="alumni-name">Jane Smith</h3>
-            <p class="alumni-designation">Doctor</p>
-            <p class="alumni-about">Dedicated to healthcare and serving communities for over a decade.</p>
+            <h3 class="alumni-name">Arun Ku Samal</h3>
+            <p class="alumni-designation">Content Writer</p>
+            <p class="alumni-about">Crafting meaningful content and supporting knowledge-sharing initiatives.</p>
         </div>
 
         <!-- Card 3 -->
         <div class="alumni-card">
             <div class="alumni-img">
-                <img src="img/profile3.jpg" alt="Alumni Name">
+                <img src="{{ ROOT_URL }}/storage/app/public/img/sivananda_mallik.jpg" alt="Sivananda Mallik">
             </div>
-            <h3 class="alumni-name">Rahul Verma</h3>
-            <p class="alumni-designation">Entrepreneur</p>
-            <p class="alumni-about">Building startups and mentoring young innovators worldwide.</p>
+            <h3 class="alumni-name">Sivananda Mallik</h3>
+            <p class="alumni-designation">Social Media Head</p>
+            <p class="alumni-about">Driving digital presence and connecting communities through social media.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="alumni-card">
+            <div class="alumni-img">
+                <img src="{{ ROOT_URL }}/storage/app/public/img/biswajit_behera.jpeg" alt="Biswajit Behera">
+            </div>
+            <h3 class="alumni-name">Biswajit Behera</h3>
+            <p class="alumni-designation">Alumni Website Head</p>
+            <p class="alumni-about">Leading the alumni website design and fostering digital engagement.</p>
         </div>
     </div>
 </div>
