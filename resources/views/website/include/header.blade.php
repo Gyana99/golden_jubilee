@@ -23,6 +23,7 @@
                 <li class="nav-item"><a class="nav-link {{ request()->is('contribution-deatils') ? 'active' : '' }}" href="{{ url('contribution-deatils') }}">ଦାନ</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->is('alumni-registration') ? 'active' : '' }}" href="{{ url('alumni-registration') }}">ପୂର୍ବ ଛାତ୍ରଛାତ୍ରୀ ପଞ୍ଜିକରଣ</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->is('school-story') ? 'active' : '' }}" href="{{ url('school-story') }}">ବିଦ୍ୟାଳୟ କାହାଣୀ</a></li>
+                <li class="nav-item"><a class="nav-link {{ request()->is('add-magazines') ? 'active' : '' }}" href="{{ url('add-magazines') }}">Magazines</a></li>
             </ul>
         </div>
     </div>
