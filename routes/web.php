@@ -27,6 +27,7 @@ Route::get('/', function () {
 Route::match(['post','get'],'event-deatils',[App\Http\Controllers\EventController::class,'getDataForView']);
 Route::match(['post','get'],'/alumni-registration',[App\Http\Controllers\AlumniController::class,'storeByUser'])->name('alumni-registration');
 Route::match(['post','get'],'/contribution-deatils',[App\Http\Controllers\ContributionController::class,'contributionDeatils'])->name('contribution-deatils');
+
 Route::get('/alumni-registration-success', function () {
     return view('website.alumnisuccess');
 })->name('alumni.success');
@@ -45,6 +46,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('events', App\Http\Controllers\EventController::class);
+    Route::resource('magazines', App\Http\Controllers\MagazineController::class);
     Route::resource('alumni', App\Http\Controllers\AlumniController::class)->parameters(['alumni' => 'alumni']);
     Route::match(['get','post','patch'],'/alumni/{alumni}/approve', [App\Http\Controllers\AlumniController::class, 'approve'])
     ->name('alumni.approve');
