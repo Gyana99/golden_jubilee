@@ -16,6 +16,17 @@ class AdminUserSeeder extends Seeder
                 'name' => 'SUPADMIN',
                 'email' => 'ugbn1973@gmail.com',
                 'password' => Hash::make('1973'),
+                'userRoll' => 0
+            ],
+            [
+                'name' => 'Gyana',
+                'email' => 'grnpati143@gmail.com',
+                'password' => Hash::make('Gyana'),
+            ],
+            [
+                'name' => 'Siba',
+                'email' => 'msivanandaba@gmail.com',
+                'password' => Hash::make('Siba'),
             ]
         );
     }

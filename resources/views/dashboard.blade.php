@@ -12,10 +12,12 @@
                     <h1 class="text-2xl font-bold mb-4">Welcome, {{ Auth::user()->name }} 👋</h1>
                     <p class="mb-2">This is your <strong>Golden Jubilee Admin Panel</strong>.</p>
                     <p class="mb-4">From here you can manage:</p>
+
                     <ul class="list-disc list-inside">
                         <li>🎭 <strong>Events</strong> — Create and update event details</li>
                         <li>🎓 <strong>Alumni</strong> — Register and approve alumni</li>
                         <li>💰 <strong>Contributions</strong> — Track donations and contributions</li>
+                        <li>📖 <strong>Magazines</strong> — Upload and manage school magazines</li>
                     </ul>
                 </div>
             </div>
