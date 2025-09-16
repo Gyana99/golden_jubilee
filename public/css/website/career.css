@@ -42,15 +42,22 @@
     font-weight: 600
 }
 
-.apply-section,.background-patch,.explore-section {
+.apply-section,
+.background-patch,
+.explore-section {
     position: relative
 }
 
-.apply-section,.byom__section,.covid__section,.learning--section {
+.apply-section,
+.byom__section,
+.covid__section,
+.learning--section {
     padding: 3rem 0
 }
 
-.apply-section h2,.career__heading,.explore-text h2 {
+.apply-section h2,
+.career__heading,
+.explore-text h2 {
     font-size: 2rem
 }
 
@@ -61,7 +68,7 @@
     top: -70px;
     width: 300px;
     height: 765px;
-    background-image: linear-gradient(#f8a432,#d05939,#bd343c);
+    background-image: linear-gradient(#f8a432, #d05939, #bd343c);
     transform: rotate(22deg);
     z-index: 1
 }
@@ -153,11 +160,12 @@
     position: relative
 }
 
-.culture__textarea,.development__card {
+.culture__textarea,
+.development__card {
     padding: 2rem;
     position: relative;
     border: 4px solid #f7941d;
-    border-image: conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1
+    border-image: conic-gradient(#ec1013, #f19633, #F44336, #028db8, #e80e11) 1
 }
 
 .development__card {
@@ -184,11 +192,12 @@
 }
 
 .card__date {
-    color: rgba(255,255,255,.45);
+    color: rgba(255, 255, 255, .45);
     font-size: .85rem
 }
 
-.card__date span,.card__ribbon {
+.card__date span,
+.card__ribbon {
     color: rgb(255 255 255)
 }
 
@@ -240,15 +249,15 @@
     height: 375px;
     background: 0 0;
     border: 4px solid #f7941d;
-    border-image: conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1;
-    -moz-border-image: -moz-conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1;
-    -webkit-border-image: -webkit-conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1;
-    -o-border-image: -o-conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1;
-    -ms-border-image: -ms-conic-gradient(#ec1013,#f19633,#F44336,#028db8,#e80e11) 1
+    border-image: conic-gradient(#ec1013, #f19633, #F44336, #028db8, #e80e11) 1;
+    -moz-border-image: -moz-conic-gradient(#ec1013, #f19633, #F44336, #028db8, #e80e11) 1;
+    -webkit-border-image: -webkit-conic-gradient(#ec1013, #f19633, #F44336, #028db8, #e80e11) 1;
+    -o-border-image: -o-conic-gradient(#ec1013, #f19633, #F44336, #028db8, #e80e11) 1;
+    -ms-border-image: -ms-conic-gradient(#ec1013, #f19633, #F44336, #028db8, #e80e11) 1
 }
 
 .border_none {
-    border-bottom: 0!important
+    border-bottom: 0 !important
 }
 
 .btn {
@@ -282,7 +291,7 @@
 }
 
 .recruitment__fraud__section a:hover {
-    color: #118fbb!important
+    color: #118fbb !important
 }
 
 .recruitment__fraud__section .circle--btn {
@@ -359,17 +368,18 @@
 }
 
 .caption--bg .card__caption {
-    background:#223f99d4;
+    background: #223f99d4;
 }
 
-.caption--bg:hover .card__title,.caption--bg:hover .learn__more {
+.caption--bg:hover .card__title,
+.caption--bg:hover .learn__more {
     color: var(--web-color1);
 }
 
 
 .career__card__img .card__caption {
     padding: 4px 12px;
-    color: rgba(255,255,255,.85);
+    color: rgba(255, 255, 255, .85);
     border-radius: .2rem;
     font-weight: 600;
 }
@@ -402,7 +412,8 @@
     bottom: -40px
 }
 
-.card__image img,.img-grid {
+.card__image img,
+.img-grid {
     width: 100%
 }
 
@@ -413,26 +424,35 @@
     top: 15px
 }
 
-.byom__section,.card__arrow,.covid__card,.covid__section {
+.byom__section,
+.card__arrow,
+.covid__card,
+.covid__section {
     position: relative
 }
 
-.covid__card__arrow .swiper-button-next:focus,.covid__card__arrow .swiper-button-prev:focus,.covid__pagination .swiper-pagination-bullet:focus {
+.covid__card__arrow .swiper-button-next:focus,
+.covid__card__arrow .swiper-button-prev:focus,
+.covid__pagination .swiper-pagination-bullet:focus {
     outline: 0
 }
 
 .covid__pagination .swiper-pagination-bullet {
     width: 15px;
     height: 15px;
-    margin: 2px!important;
+    margin: 2px !important;
     background: #000
 }
 
-.byom__section,.covid__section {
+.byom__section,
+.covid__section {
     padding-bottom: 5.5rem
 }
 
-.byom__card__arrow .swiper-button-next,.byom__card__arrow .swiper-button-prev,.covid__card__arrow .swiper-button-next,.covid__card__arrow .swiper-button-prev {
+.byom__card__arrow .swiper-button-next,
+.byom__card__arrow .swiper-button-prev,
+.covid__card__arrow .swiper-button-next,
+.covid__card__arrow .swiper-button-prev {
     content: "";
     width: 20px;
     height: 20px;
@@ -456,7 +476,8 @@
     position: absolute
 }
 
-.blog__card__arrow .swiper-button-next:focus,.covid__card__arrow .swiper-button-next:hover {
+.blog__card__arrow .swiper-button-next:focus,
+.covid__card__arrow .swiper-button-next:hover {
     outline: 0;
     border-color: #d7182a #d7182a transparent transparent
 }
@@ -487,7 +508,7 @@
 }
 
 .covid__pagination {
-    bottom: 40px!important
+    bottom: 40px !important
 }
 
 .covid__card .card__icon {
@@ -512,7 +533,8 @@
     align-items: center
 }
 
-.card__arrow,.covid__descrip .card__arrow {
+.card__arrow,
+.covid__descrip .card__arrow {
     transform: rotate(180deg);
     color: #fff;
     font-size: 1.2rem;
@@ -552,7 +574,8 @@
     position: absolute
 }
 
-.byom__card__arrow .swiper-button-next:focus,.byom__card__arrow .swiper-button-next:hover {
+.byom__card__arrow .swiper-button-next:focus,
+.byom__card__arrow .swiper-button-next:hover {
     outline: 0;
     border-color: #d7182a #d7182a transparent transparent
 }
@@ -601,7 +624,7 @@
     flex-flow: column;
     justify-content: center;
     text-align: center;
-    color: rgba(255,255,255,.8);
+    color: rgba(255, 255, 255, .8);
     display: none;
 
 }
@@ -612,7 +635,7 @@
 }
 
 .white--bg {
-    background: #fff!important
+    background: #fff !important
 }
 
 .img-grid__item img {
@@ -674,8 +697,11 @@
 }
 
 @media (min-width: 768px) {
-    .card__image,.covid__card,.swiper-container {
-        position:relative
+
+    .card__image,
+    .covid__card,
+    .swiper-container {
+        position: relative
     }
 
     .banner-caption {
@@ -695,7 +721,7 @@
     }
 
     .swiper-pagination-bullet {
-        display: none!important
+        display: none !important
     }
 
     .apply__card {
@@ -708,11 +734,18 @@
         transform: rotate(11deg)
     }
 
-    .apply-section h2,.career__heading,.explore-text h2 {
+    .apply-section h2,
+    .career__heading,
+    .explore-text h2 {
         font-size: 3rem
     }
 
-    .apply-section,.byom__section,.covid__section,.learning--section,.lifeatcsm__section,.recruitment__fraud__section {
+    .apply-section,
+    .byom__section,
+    .covid__section,
+    .learning--section,
+    .lifeatcsm__section,
+    .recruitment__fraud__section {
         padding: 4rem 0
     }
 
@@ -810,7 +843,7 @@
 
 @media (min-width: 992px) {
     .background-patch:before {
-        width:138px;
+        width: 138px;
         right: 245px;
         transform: rotate(18deg)
     }
@@ -827,14 +860,14 @@
 
 @media (min-width: 1024px) {
     .explore-section:after {
-        top:87px;
+        top: 87px;
         width: 499px
     }
 }
 
 @media (min-width: 1200px) {
     .banner-caption h1 {
-        font-size:5rem;
+        font-size: 5rem;
         margin-bottom: 7rem;
         font-weight: 800
     }
@@ -858,7 +891,7 @@
     }
 
     .covid__card:hover {
-        box-shadow: 2px 3px 30px rgba(0,0,0,.2)
+        box-shadow: 2px 3px 30px rgba(0, 0, 0, .2)
     }
 
     .career__card__body {
@@ -896,16 +929,49 @@
         color: #333;
         width: 450px;
         display: block;
+        left: 100px;
     }
 
-    .grid__item--108,.grid__item--109,.grid__item--110,.grid__item--111,.grid__item--112,.grid__item--113,.grid__item--114,.grid__item--126,.grid__item--130,.grid__item--41,.grid__item--45,.grid__item--57,.grid__item--58,.grid__item--59,.grid__item--60,.grid__item--61,.grid__item--62,.grid__item--63,.grid__item--73,.grid__item--74,.grid__item--75,.grid__item--76,.grid__item--77,.grid__item--78,.grid__item--79,.grid__item--80,.grid__item--91,.grid__item--92,.grid__item--93,.grid__item--94,.grid__item--95,.grid__item--96,.grid__item--97 {
+    .grid__item--108,
+    .grid__item--109,
+    .grid__item--110,
+    .grid__item--111,
+    .grid__item--112,
+    .grid__item--113,
+    .grid__item--114,
+    .grid__item--126,
+    .grid__item--130,
+    .grid__item--41,
+    .grid__item--45,
+    .grid__item--57,
+    .grid__item--58,
+    .grid__item--59,
+    .grid__item--60,
+    .grid__item--61,
+    .grid__item--62,
+    .grid__item--63,
+    .grid__item--73,
+    .grid__item--74,
+    .grid__item--75,
+    .grid__item--76,
+    .grid__item--77,
+    .grid__item--78,
+    .grid__item--79,
+    .grid__item--80,
+    .grid__item--91,
+    .grid__item--92,
+    .grid__item--93,
+    .grid__item--94,
+    .grid__item--95,
+    .grid__item--96,
+    .grid__item--97 {
         opacity: 0
     }
 }
 
 @media (min-width: 1366px) {
     .background-patch:before {
-        width:222px;
+        width: 222px;
         right: 300px;
         top: -60px
     }
@@ -917,7 +983,7 @@
 
 @media (min-width: 1440px) {
     .banner-caption {
-        bottom:14rem
+        bottom: 14rem
     }
 
     .item--aboutEmployee {
@@ -935,7 +1001,7 @@
 
 @media (min-width: 1920px) {
     .banner-caption h1 {
-        margin-bottom:11rem
+        margin-bottom: 11rem
     }
 
     .banner-caption {
@@ -960,72 +1026,82 @@
     background: #eee
 }
 
+
+
+
+
+    
+
+
+
+
+
 /* Alumni Section */
 .alumni-section {
-  padding: 3rem 1rem;
-  background: #f9f9f9;
-  text-align: center;
+    padding: 3rem 1rem;
+    background: #f9f9f9;
+    text-align: center;
 }
 
 .alumni-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  color: #333;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #333;
 }
 
 .alumni-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
 
 .alumni-card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  padding: 2rem 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .alumni-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .alumni-img {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 1rem;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #a94438; /* Maroon border */
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #a94438;
+    /* Maroon border */
 }
 
 .alumni-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .alumni-name {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin: 0.5rem 0;
-  color: #222;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    color: #222;
 }
 
 .alumni-designation {
-  font-size: 1rem;
-  color: #a94438;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
+    font-size: 1rem;
+    color: #a94438;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
 .alumni-about {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
-  padding: 0 0.5rem;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    padding: 0 0.5rem;
 }
-

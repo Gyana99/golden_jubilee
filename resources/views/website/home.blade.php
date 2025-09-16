@@ -10,6 +10,7 @@
     <!-- item--aboutEmployee -->
     <div class="img-grid">
         <div class="img-grid__middle">
+            <div class="img-grid__item grid__item--0"></div>
             <div class="img-grid__item grid__item--1"></div>
             <div class="img-grid__item grid__item--2"></div>
             <div class="img-grid__item grid__item--3"></div>
@@ -185,7 +186,7 @@
 
     <div class="csm__stat">
         <h2 class="content__heading mb-md-3 mt-md-3 mt-xl-0">
-            ୧୯୭୩ ରୁ ସେବାରେ – U.G. ବିଦ୍ୟାପୀଠ, ନରେନ୍ଦ୍ରପୁର
+            ୧୯୭୩ ରୁ ସେବାରେ - U.G. ବିଦ୍ୟାପୀଠ, ନରେନ୍ଦ୍ରପୁର
         </h2>
         <p class="content__desc">
             U.G. ବିଦ୍ୟାପୀଠ, ନରେନ୍ଦ୍ରପୁର ୧୯୭୩ ରେ ପ୍ରତିଷ୍ଠିତ ହୋଇ
@@ -202,47 +203,90 @@
     <h2 class="alumni-title">Our Alumni</h2>
 
     <div class="alumni-grid">
+
         <!-- Card 1 -->
         <div class="alumni-card">
             <div class="alumni-img">
-                <img src="{{ ROOT_URL }}/storage/app/public/img/ajoy_kumar_nayak.jpg" alt="Ajoy Kumar Nayak">
+                <img src="{{ ROOT_URL }}/storage/app/public/img/Abhaya_Sutar.jpg" alt="Abhaya Sutar">
             </div>
-            <h3 class="alumni-name">Ajoy Kumar Nayak</h3>
-            <p class="alumni-designation">Director</p>
-            <p class="alumni-about">Providing leadership and vision, driving innovation and growth with dedication.</p>
+            <h3 class="alumni-name">Abhaya Sutar</h3>
+            <p class="alumni-designation">President</p>
+            <p class="alumni-about">Dedicated to shaping strategies that strengthen alumni connections and inspire future growth.</p>
         </div>
 
         <!-- Card 2 -->
+        <div class="alumni-card">
+            <div class="alumni-img">
+                <img src="{{ ROOT_URL }}/storage/app/public/img/Laxmidhar_Majhi.jpg" alt="Laxmidhar_Majhi">
+            </div>
+            <h3 class="alumni-name">Laxmidhar Majhi</h3>
+            <p class="alumni-designation">Working President</p>
+            <p class="alumni-about">Passionate about empowering individuals and building a collaborative alumni community.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="alumni-card">
+            <div class="alumni-img">
+                <img src="{{ ROOT_URL }}/storage/app/public/img/Prof_Golak_Nayak.jpg" alt="Prof_Golak_Nayak">
+            </div>
+            <h3 class="alumni-name">Prof Golak Nayak</h3>
+            <p class="alumni-designation">General Secretary</p>
+            <p class="alumni-about">Committed to promoting teamwork, transparency, and meaningful engagement across initiatives.</p>
+        </div>
+
+        <!-- Card 4 -->
+<div class="alumni-card">
+    <div class="alumni-img">
+        <img src="{{ ROOT_URL }}/storage/app/public/img/ajoy_kumar_nayak.jpg" alt="ajoy kumar nayak">
+    </div>
+    <h3 class="alumni-name">Ajoy Kumar Nayak</h3>
+    <p class="alumni-designation">Vice president</p>
+    <p class="alumni-about">Strengthening leadership initiatives, supporting organizational goals, and fostering alumni collaboration.</p>
+</div>
+
+
+        <!-- Card 5 -->
+        <div class="alumni-card">
+            <div class="alumni-img">
+                <img src="{{ ROOT_URL }}/storage/app/public/img/Prafulla_Kumar_Behera.jpg" alt="Prafulla Kumar Behera">
+            </div>
+            <h3 class="alumni-name">Prafulla Kumar Behera</h3>
+            <p class="alumni-designation">Treasurer</p>
+            <p class="alumni-about">Managing resources responsibly to support alumni initiatives and long-term development.</p>
+        </div>
+
+        <!-- Card 6 -->
         <div class="alumni-card">
             <div class="alumni-img">
                 <img src="{{ ROOT_URL }}/storage/app/public/img/arun_k_samal.jpg" alt="Arun Ku Samal">
             </div>
             <h3 class="alumni-name">Arun Ku Samal</h3>
             <p class="alumni-designation">Content Writer</p>
-            <p class="alumni-about">Crafting meaningful content and supporting knowledge-sharing initiatives.</p>
+            <p class="alumni-about">Dedicated to creating impactful stories and capturing alumni achievements with clarity.</p>
         </div>
 
-        <!-- Card 3 -->
+        <!-- Card 7 -->
         <div class="alumni-card">
             <div class="alumni-img">
                 <img src="{{ ROOT_URL }}/storage/app/public/img/sivananda_mallik.jpg" alt="Sivananda Mallik">
             </div>
             <h3 class="alumni-name">Sivananda Mallik</h3>
             <p class="alumni-designation">Social Media Head</p>
-            <p class="alumni-about">Driving digital presence and connecting communities through social media.</p>
+            <p class="alumni-about">Engaging audiences through creative digital campaigns and strengthening alumni presence online.</p>
         </div>
 
-        <!-- Card 4 -->
+        <!-- Card 8 -->
         <div class="alumni-card">
             <div class="alumni-img">
                 <img src="{{ ROOT_URL }}/storage/app/public/img/biswajit_behera.jpeg" alt="Biswajit Behera">
             </div>
             <h3 class="alumni-name">Biswajit Behera</h3>
             <p class="alumni-designation">Alumni Website Head</p>
-            <p class="alumni-about">Leading the alumni website design and fostering digital engagement.</p>
+            <p class="alumni-about">Leading digital initiatives by building user-friendly platforms to connect alumni worldwide.</p>
         </div>
     </div>
 </div>
+
 
 
 
@@ -276,7 +320,7 @@
                 TOTAL_EMPLOYEE = data.total_image;
 
                 var gridCount = TOTAL_EMPLOYEE < 170 ? TOTAL_EMPLOYEE : 170;
-                for (var i = 1; i <= gridCount; i++) {
+                for (var i = 0; i <= gridCount; i++) {
                     $('.img-grid__middle .grid__item--' + i).prepend("<img class='fadein' alt='' id=" + i + " src='" + IMAGE_LIST[i] + "' />");
                 };
             }
@@ -285,7 +329,7 @@
 
         function randomImgChange(midItemNo) {
             var gridCount = TOTAL_EMPLOYEE < 170 ? TOTAL_EMPLOYEE : 170;
-            for (var i = 1; i <= 1; i++) {
+            for (var i = 0; i <= 1; i++) {
                 var totalImgCount = TOTAL_EMPLOYEE;
                 var randomNumber = Math.floor((Math.random() * totalImgCount) + 1);
                 var randomItem = Math.floor((Math.random() * gridCount) + 1);
