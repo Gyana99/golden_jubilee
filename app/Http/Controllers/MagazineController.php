@@ -113,4 +113,50 @@ class MagazineController extends Controller
 
         return redirect()->route('magazines.index')->with('success', 'Magazine deleted successfully.');
     }
+    /**
+     * add Magazine by user.
+     */
+    public function addMagazineByUser(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $request->validate([
+                'title'       => 'required|string|max:255',
+                'alumni_id'   => 'required|exists:alumni,id',
+                'type'        => 'required|in:image,text',
+                'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+                'details'     => 'nullable|string',
+            ]);
+
+            $data = [
+                'title'      => $request->title,
+                'alumni_id'  => $request->alumni_id,
+                'type'       => $request->type,
+                'details'    => $request->type === 'text' ? $request->details : null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+            $alumninyid = Alumni::find($request->alumni_id);
+            // If type = image → save image
+            if ($request->type === 'image' && $request->hasFile('image')) {
+                $extension = $request->file('image')->getClientOriginalExtension();
+                $filename = strtolower(str_replace(' ', '_', $alumninyid->name))
+                    . '_' . rand(1000, 9999)
+                    . '_' . now()->format('YmdHis')
+                    . '.' . $extension;
+
+                $request->file('image')->storeAs('public/magazines', $filename);
+
+                $data['image'] = $filename;
+                $data['details'] = null;
+            }
+
+            Magazine::create($data);
+
+            return redirect()->back()->with('success', '📖 Magazine submitted successfully ✅');
+        }
+
+        // Fetch alumni list for dropdown
+        $alumni = Alumni::all(['id', 'name', 'passout_year']);
+        return view('website.addmagazine', compact('alumni'));
+    }
 }

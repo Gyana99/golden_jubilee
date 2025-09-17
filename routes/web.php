@@ -26,6 +26,7 @@ Route::get('/', function () {
 
 Route::match(['post','get'],'event-deatils',[App\Http\Controllers\EventController::class,'getDataForView']);
 Route::match(['post','get'],'/alumni-registration',[App\Http\Controllers\AlumniController::class,'storeByUser'])->name('alumni-registration');
+Route::match(['post','get'],'/add-magazines',[App\Http\Controllers\MagazineController::class,'addMagazineByUser'])->name('add-magazines');
 Route::match(['post','get'],'/contribution-deatils',[App\Http\Controllers\ContributionController::class,'contributionDeatils'])->name('contribution-deatils');
 
 Route::get('/alumni-registration-success', function () {
