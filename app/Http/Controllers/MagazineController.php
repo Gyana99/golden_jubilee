@@ -119,13 +119,29 @@ class MagazineController extends Controller
     public function addMagazineByUser(Request $request)
     {
         if ($request->isMethod('post')) {
-            $request->validate([
-                'title'       => 'required|string|max:255',
-                'alumni_id'   => 'required|exists:alumni,id',
-                'type'        => 'required|in:image,text',
-                'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
-                'details'     => 'nullable|string',
-            ]);
+            // $request->validate([
+            //     'title'       => 'required|string|max:255',
+            //     'alumni_id'   => 'required|exists:alumni,id',
+            //     'type'        => 'required|in:image,text',
+            //     'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            //     'details'     => 'nullable|string',
+            // ]);
+
+            $rules = [
+                'title'     => 'required|string|max:255',
+                'alumni_id' => 'required|exists:alumni,id',
+                'type'      => 'required|in:image,text',
+            ];
+
+            if ($request->type === 'text') {
+                $rules['details'] = 'required|string';
+            }
+
+            if ($request->type === 'image') {
+                $rules['image'] = 'required|file|mimes:jpeg,png,pdf,docx|max:2048';
+            }
+
+            $validated = $request->validate($rules);
 
             $data = [
                 'title'      => $request->title,

@@ -180,7 +180,7 @@
             <div class="img-grid__item grid__item--167"></div>
             <div class="img-grid__item grid__item--168"></div>
             <div class="img-grid__item grid__item--169"></div>
-            <div class="img-grid__item grid__item--170"></div>
+            <!-- <div class="img-grid__item grid__item--170"></div> -->
         </div>
     </div>
 

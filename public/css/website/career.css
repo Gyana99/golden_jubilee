@@ -657,7 +657,7 @@
     transition: opacity .2s;
     background: #e0e0e0;
     flex: calc(calc(100% - 20px)/ 5);
-    min-height: 47px;
+    height: 70px;
     margin: 2px
 }
 
@@ -1026,11 +1026,20 @@
     background: #eee
 }
 
+@media(max-width:576px)
+{
+      .item--aboutEmployee {
+        height: auto
+    }
+    .img-grid__middle {
+    overflow-y: scroll;
+    height: 80vh;
+}
+}
 
 
 
 
-    
 
 
 
