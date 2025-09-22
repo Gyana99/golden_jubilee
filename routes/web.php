@@ -3,6 +3,7 @@
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WhatsAppController;
 
 
 
@@ -24,10 +25,10 @@ Route::get('/', function () {
     return view('website.home');
 });
 
-Route::match(['post','get'],'event-deatils',[App\Http\Controllers\EventController::class,'getDataForView']);
-Route::match(['post','get'],'/alumni-registration',[App\Http\Controllers\AlumniController::class,'storeByUser'])->name('alumni-registration');
-Route::match(['post','get'],'/add-magazines',[App\Http\Controllers\MagazineController::class,'addMagazineByUser'])->name('add-magazines');
-Route::match(['post','get'],'/contribution-deatils',[App\Http\Controllers\ContributionController::class,'contributionDeatils'])->name('contribution-deatils');
+Route::match(['post', 'get'], 'event-deatils', [App\Http\Controllers\EventController::class, 'getDataForView']);
+Route::match(['post', 'get'], '/alumni-registration', [App\Http\Controllers\AlumniController::class, 'storeByUser'])->name('alumni-registration');
+Route::match(['post', 'get'], '/add-magazines', [App\Http\Controllers\MagazineController::class, 'addMagazineByUser'])->name('add-magazines');
+Route::match(['post', 'get'], '/contribution-deatils', [App\Http\Controllers\ContributionController::class, 'contributionDeatils'])->name('contribution-deatils');
 
 Route::get('/alumni-registration-success', function () {
     return view('website.alumnisuccess');
@@ -49,9 +50,12 @@ Route::middleware('auth')->group(function () {
     Route::resource('events', App\Http\Controllers\EventController::class);
     Route::resource('magazines', App\Http\Controllers\MagazineController::class);
     Route::resource('alumni', App\Http\Controllers\AlumniController::class)->parameters(['alumni' => 'alumni']);
-    Route::match(['get','post','patch'],'/alumni/{alumni}/approve', [App\Http\Controllers\AlumniController::class, 'approve'])
-    ->name('alumni.approve');
+    Route::match(['get', 'post', 'patch'], '/alumni/{alumni}/approve', [App\Http\Controllers\AlumniController::class, 'approve'])
+        ->name('alumni.approve');
     Route::resource('contributions', App\Http\Controllers\ContributionController::class);
+
+    Route::get('/whatsapp', [WhatsAppController::class, 'index'])->name('whatsapp.form');
+    Route::post('/whatsapp/send', [WhatsAppController::class, 'sendBulk'])->name('whatsapp.send');
 });
 
 require __DIR__ . '/auth.php';
