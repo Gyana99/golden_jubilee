@@ -36,6 +36,10 @@
                     <x-nav-link :href="route('magazines.index')" :active="request()->routeIs('magazines.*')">
                         📖 {{ __('Magazine') }}
                     </x-nav-link>
+                    {{-- WhatsApp Bulk Message --}}
+                    <x-nav-link :href="route('whatsapp.form')" :active="request()->routeIs('whatsapp.*')">
+                        💬 {{ __('WhatsApp Message') }}
+                    </x-nav-link>
                 </div>
 
             </div>
