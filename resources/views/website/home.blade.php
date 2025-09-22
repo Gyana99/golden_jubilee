@@ -180,13 +180,13 @@
             <div class="img-grid__item grid__item--167"></div>
             <div class="img-grid__item grid__item--168"></div>
             <div class="img-grid__item grid__item--169"></div>
-            <!-- <div class="img-grid__item grid__item--170"></div> -->
+            
         </div>
     </div>
 
     <div class="csm__stat">
         <h2 class="content__heading mb-md-3 mt-md-3 mt-xl-0">
-            ୧୯୭୩ ରୁ ସେବାରେ - U.G. ବିଦ୍ୟାପୀଠ, ନରେନ୍ଦ୍ରପୁର
+            ୧୯୭୩ ରୁ ସେବାରେ – U.G. ବିଦ୍ୟାପୀଠ, ନରେନ୍ଦ୍ରପୁର
         </h2>
         <p class="content__desc">
             U.G. ବିଦ୍ୟାପୀଠ, ନରେନ୍ଦ୍ରପୁର ୧୯୭୩ ରେ ପ୍ରତିଷ୍ଠିତ ହୋଇ
@@ -198,6 +198,8 @@
     </div>
 
 </div>
+
+
 <!-- Team / Alumni Section -->
 <div class="alumni-section">
     <h2 class="alumni-title">Our Alumni</h2>
@@ -223,26 +225,27 @@
             <p class="alumni-designation">Working President</p>
             <p class="alumni-about">Passionate about empowering individuals and building a collaborative alumni community.</p>
         </div>
+                 <!-- Card 4 -->
+            <div class="alumni-card">
+                <div class="alumni-img">
+                    <img src="{{ ROOT_URL }}/storage/app/public/img/ajoy_kumar_nayak.jpg" alt="ajoy kumar nayak">
+                </div>
+                <h3 class="alumni-name">Ajoy Kumar Nayak</h3>
+                <p class="alumni-designation">Vice president</p>
+                <p class="alumni-about">Strengthening leadership initiatives, supporting organizational goals, and fostering alumni collaboration.</p>
+            </div>
 
         <!-- Card 3 -->
         <div class="alumni-card">
             <div class="alumni-img">
                 <img src="{{ ROOT_URL }}/storage/app/public/img/Prof_Golak_Nayak.jpg" alt="Prof_Golak_Nayak">
             </div>
-            <h3 class="alumni-name">Prof Golak Nayak</h3>
+            <h3 class="alumni-name">Golak Nayak</h3>
             <p class="alumni-designation">General Secretary</p>
             <p class="alumni-about">Committed to promoting teamwork, transparency, and meaningful engagement across initiatives.</p>
         </div>
 
-        <!-- Card 4 -->
-<div class="alumni-card">
-    <div class="alumni-img">
-        <img src="{{ ROOT_URL }}/storage/app/public/img/ajoy_kumar_nayak.jpg" alt="ajoy kumar nayak">
-    </div>
-    <h3 class="alumni-name">Ajoy Kumar Nayak</h3>
-    <p class="alumni-designation">Vice president</p>
-    <p class="alumni-about">Strengthening leadership initiatives, supporting organizational goals, and fostering alumni collaboration.</p>
-</div>
+           
 
 
         <!-- Card 5 -->
@@ -260,7 +263,7 @@
             <div class="alumni-img">
                 <img src="{{ ROOT_URL }}/storage/app/public/img/arun_k_samal.jpg" alt="Arun Ku Samal">
             </div>
-            <h3 class="alumni-name">Arun Ku Samal</h3>
+            <h3 class="alumni-name">Arun K Samal</h3>
             <p class="alumni-designation">Content Writer</p>
             <p class="alumni-about">Dedicated to creating impactful stories and capturing alumni achievements with clarity.</p>
         </div>
@@ -283,6 +286,23 @@
             <h3 class="alumni-name">Biswajit Behera</h3>
             <p class="alumni-designation">Alumni Website Head</p>
             <p class="alumni-about">Leading digital initiatives by building user-friendly platforms to connect alumni worldwide.</p>
+        </div>
+    </div>
+</div>
+
+<div class="alumni-section-staff">
+    <h2 class="alumni-title-staff">Faculty </h2>
+    <div class="alumni-grid-staff">
+
+        <!-- Card 1 -->
+        <div class="alumni-card-staff">
+            <div class="alumni-img-staff">
+                <img src="{{ ROOT_URL }}/storage/app/public/img/SHREEKANTA_MALIK.jpg" alt="Abhaya Sutar">
+            </div>
+            <h3 class="alumni-name-staff">Shreekanta Malik</h3>
+            <p class="alumni-designation-staff">HM U.G.N.B Narendra Pur</p>
+            <p class="alumni-about-staff">We take great pride in your achievements and the values you carry from our school. 
+                Stay connected, keep inspiring the younger generation, and together let's uphold the legacy of our institution.</p>
         </div>
     </div>
 </div>

@@ -1114,3 +1114,76 @@
     line-height: 1.5;
     padding: 0 0.5rem;
 }
+
+
+
+/* staff Section */
+.alumni-section-staff {
+    padding: 0rem 1rem;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.alumni-title-staff {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.alumni-grid-staff {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.alumni-card-staff {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alumni-card-staff:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.alumni-img-staff {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #a94438;
+    /* Maroon border */
+}
+
+.alumni-img-staff img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.alumni-name-staff {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    color: #222;
+}
+
+.alumni-designation-staff {
+    font-size: 1rem;
+    color: #a94438;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.alumni-about-staff {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+}
+
