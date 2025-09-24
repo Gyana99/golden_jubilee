@@ -28,9 +28,7 @@ class WhatsAppController extends Controller
 
         // ✅ Hardcoded recipients (or pull from DB)
         $recipients = [
-            'whatsapp:+917205569189',
-            'whatsapp:+919439099799',
-            'whatsapp:+918260690401',
+            'whatsapp:+917205569189'
         ];
 
         $responses = [];
