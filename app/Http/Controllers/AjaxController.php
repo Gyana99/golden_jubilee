@@ -33,31 +33,58 @@ class AjaxController extends Controller
     // }
 
     public function getEmployeeImage()
-{
-    $getallphoto = DB::table('alumni')->where('status', 1)->get(['photo']);
-    $arrData = [];
+    {
+        $getallphoto = DB::table('alumni')->where('status', 1)->get(['photo']);
+        $arrData = [];
 
-    $total_images = 200; // target total images
-    $realCount = count($getallphoto);
+        $total_images = 200; // target total images
+        $realCount = count($getallphoto);
 
-    // Add real alumni photos
-    foreach ($getallphoto as $photo) {
-        $arrData[] = ROOT_URL . '/storage/app/public/alumniphoto/' . $photo->photo;
+        // Add real alumni photos
+        foreach ($getallphoto as $photo) {
+            $arrData[] = ROOT_URL . '/storage/app/public/alumniphoto/' . $photo->photo;
+        }
+
+        // Add placeholders to reach 200
+        for ($i = $realCount; $i < $total_images; $i++) {
+            $arrData[] = "https://picsum.photos/200/200?random=" . $i;
+        }
+
+        // 🔀 Randomize order on every call
+        shuffle($arrData);
+
+        return response()->json([
+            "status" => 200,
+            "images" => $arrData,
+            "total_image" => $total_images
+        ]);
     }
-
-    // Add placeholders to reach 200
-    for ($i = $realCount; $i < $total_images; $i++) {
-        $arrData[] = "https://picsum.photos/200/200?random=" . $i;
+    public function countVisits(Request $res)
+    {
+        $input = $res->all();
+        $id = $input['id'] ?? '';
+        if ($id == '' || $id == null) {
+            return response()->json([
+                "status" => 400,
+                'count' => 10000000000000000
+            ]);
+        }
+        if ($id == 1) {
+            DB::table('visits')->insert([
+                'ip_address' => $res->ip() ?? '',
+                'user_agent' => $res->header('User-Agent') ?? ''
+            ]);
+            $result = DB::table('visits')->count();
+            return response()->json([
+                "status" => 200,
+                'count' => $result
+            ]);
+        } else if ($id == 2) {
+            $result = DB::table('visits')->count();
+            return response()->json([
+                "status" => 200,
+                'count' => $result
+            ]);
+        }
     }
-
-    // 🔀 Randomize order on every call
-    shuffle($arrData);
-
-    return response()->json([
-        "status" => 200,
-        "images" => $arrData,
-        "total_image" => $total_images
-    ]);
-}
-
 }

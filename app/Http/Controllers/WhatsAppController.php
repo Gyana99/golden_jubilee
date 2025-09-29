@@ -14,7 +14,7 @@ class WhatsAppController extends Controller
         return view('whatsapp.form');
     }
 
-    // Handle bulk send
+
     public function sendBulk(Request $request)
     {
         // ✅ Validate message
@@ -22,35 +22,53 @@ class WhatsAppController extends Controller
             'message' => 'required|string|max:1000',
         ]);
 
-        $sid       = env('TWILIO_SID');
-        $authToken = env('TWILIO_AUTH_TOKEN');
-        $from      = env('TWILIO_WHATSAPP_FROM');
+        // ✅ Infobip credentials
+        $apiKey   = "140c7683f8c85ae11f53981747812f99-5d896533-d0c6-4497-b1ee-f5e082c85139";
+        $baseUrl  = "https://v3qrwp.api.infobip.com";
+        $sender   = "447860088970"; // Your WhatsApp sender
 
-        // ✅ Hardcoded recipients (or pull from DB)
+        // ✅ Recipients (must be full international numbers with country code)
         $recipients = [
-            'whatsapp:+917205569189'
+            "917205569189", // India example
+            // add more numbers here...
         ];
 
         $responses = [];
 
         foreach ($recipients as $to) {
-            $response = Http::withBasicAuth($sid, $authToken)
-                ->asForm()
-                ->post("https://api.twilio.com/2010-04-01/Accounts/{$sid}/Messages.json", [
-                    'To'   => $to,
-                    'From' => $from,
-                    'Body' => $request->message,
-                ]);
+            $payload = [
+                "messages" => [
+                    [
+                        "from"=> $sender,
+                        "to" => $to,  // ✅ use $to, not hardcoded
+                        "content" => [
+                            "text" => $request->message
+                        ],
+                        "context" => [
+                            "replyToMessageId" => '34CEEFE28DF2039C324F3153E8E61DE7'
+                        ],
+                        "callbackData" => "alumni-invite",
+                    ]
+                ]
+            ];
 
-            // Collect API response for each recipient
+            $response = Http::withHeaders([
+                "Authorization" => "App {$apiKey}",
+                "Content-Type"  => "application/json",
+                "Accept"        => "application/json",
+            ])->post("{$baseUrl}/whatsapp/1/message/text", $payload);
+
             $responses[] = $response->json();
         }
+
+        // ✅ Debug
         dd($responses);
-        // ✅ Return response as JSON instead of redirect
+
+        // ✅ Return all responses as JSON
         return response()->json([
-            'status' => 'success',
-            'sent_message' => $request->message,
-            'twilio_responses' => $responses,
+            "status" => "success",
+            "sent_message" => $request->message,
+            "infobip_responses" => $responses,
         ]);
     }
 }
