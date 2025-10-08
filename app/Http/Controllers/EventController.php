@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class EventController extends Controller
 {
     public function index()
@@ -71,5 +71,8 @@ class EventController extends Controller
         $upcoming  = $events->filter(fn($e) => $e->start_datetime > $now);
 
         return view('website.event-details', compact('completed', 'ongoing', 'upcoming'));
+    }
+    public function cancel($id) {
+        DB::table('');
     }
 }
