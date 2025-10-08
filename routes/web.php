@@ -58,7 +58,7 @@ Route::middleware('auth')->group(function () {
         ->name('alumni.approve');
     Route::resource('contributions', App\Http\Controllers\ContributionController::class);
 
-    Route::match(['get', 'post', 'patch'], '/events/{events}/cancel', [App\Http\Controllers\EventController::class, 'cancel'])
+    Route::match(['get', 'post', 'patch'], '/events/{id}/cancel/{status}', [App\Http\Controllers\EventController::class, 'cancel'])
         ->name('events.cancel');
     Route::get('/whatsapp', [WhatsAppController::class, 'index'])->name('whatsapp.form');
     Route::post('/whatsapp/send', [WhatsAppController::class, 'sendBulk'])->name('whatsapp.send');

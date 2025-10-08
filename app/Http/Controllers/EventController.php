@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 class EventController extends Controller
 {
     public function index()
@@ -72,7 +73,21 @@ class EventController extends Controller
 
         return view('website.event-details', compact('completed', 'ongoing', 'upcoming'));
     }
-    public function cancel($id) {
-        DB::table('');
+    public function cancel($id, $status)
+    {
+        if ($status == 1) {
+            DB::table('events')
+                ->where('id', $id)
+                ->update([
+                    'cancelled' => 1
+                ]);
+        }else if($status == 2){
+             DB::table('events')
+                ->where('id', $id)
+                ->update([
+                    'cancelled' => 0
+                ]);
+        }
+        return redirect('/events');
     }
 }

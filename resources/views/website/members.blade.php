@@ -94,19 +94,19 @@
             <h3 class="committee-header bg-primary">Finance Committee</h3>
             <div class="committee-body">
                 <ol>
-                    <li>ମାଧବ</li>
-                    <li>ପ୍ରଭାତ</li>
-                    <li>ବଳଭଦ୍ର</li>
-                    <li>ଲାଲୁମଣି ସମଲ</li>
-                    <li>ସିତାଳ ବେହେରା</li>
-                    <li>ସିବାନନ୍ଦ ମହାପାତ୍ର</li>
-                    <li>ଅମିୟା</li>
-                    <li>ନିରଞ୍ଜନ</li>
-                    <li>ବାଳଭଦ୍ର</li>
-                    <li>ଜୟକୃଷ୍ଣ</li>
-                    <li>ମଧୁସୂଦନ – <span class="phone">93928376945</span></li>
-                    <li>ଦୀପକ – <span class="phone">7892403761</span></li>
-                    <li>ବିଶ୍ୱଜିତ – <span class="phone">9398768373</span></li>
+                    <li>Abhaya Sutar (President) - <span class="phone">9437376967</span> </li>
+                    <li>Golak Nayak (Secretary)</li>
+                    <li>Prafulla Behera (Treasurer)</li>
+                    <li>Laxmidhar Majhi (Working President)</li>
+                    <li>Srikant Mallaick (Headmaster)</li>
+                    <li>Sudhansu Nayak</li>
+                    <li>Raghunath Panda</li>
+                    <li>Gangadhar Barik</li>
+                    <li>Shashadhar Behera</li>
+                    <li>Bichitra Samal</li>
+                    <li>Jagannath Behera</li>
+                    <li>Biswajit Behera</li>
+                    <li>Chinmaya Pati </li>
                 </ol>
             </div>
         </div>

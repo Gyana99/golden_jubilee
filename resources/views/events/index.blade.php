@@ -103,7 +103,8 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <form action="{{ route('events.cancel', $event->id) }}" method="POST" class="inline">
+                                    @if($event->cancelled == 0)
+                                    <form action="{{ route('events.cancel', [$event->id,1]) }}" method="POST" class="inline">
                                         @csrf
                                         @method('PATCH')
                                         <button onclick="return confirm('Do you want to cancel this event?')"
@@ -111,6 +112,17 @@
                                             🚫 Cancel Event
                                         </button>
                                     </form>
+                                    @endif
+                                    @if($event->cancelled == 1)
+                                    <form action="{{ route('events.cancel', [$event->id,2]) }}" method="POST" class="inline">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button onclick="return confirm('Do you want to cancel this event?')"
+                                            class="text-yellow-600 hover:underline">
+                                            ✅ Publish Event
+                                        </button>
+                                    </form>
+                                    @endif
                                 </td>
                             </tr>
                             @empty
