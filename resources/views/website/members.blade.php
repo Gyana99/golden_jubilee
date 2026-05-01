@@ -100,7 +100,7 @@
                     <li>Laxmidhar Majhi (Working President)</li>
                     <li>Srikant Mallaick (Headmaster)</li>
                     <li>Sudhansu Nayak</li>
-                    <li>Raghunath Panda</li>
+                    <li>Rabindranath Panda</li>
                     <li>Gangadhar Barik</li>
                     <li>Shashadhar Behera</li>
                     <li>Bichitra Samal</li>
@@ -116,19 +116,20 @@
             <h3 class="committee-header bg-success">Reception Committee</h3>
             <div class="committee-body">
                 <ol>
-                    <li>Aruna Samal</li>
+                    <li>Aruna k Samal</li>
                     <li>Kunjabihari Majhi</li>
-                    <li>Binod Bihari Sutar</li>
-                    <li>Promananda Majhi</li>
-                    <li>Bichutan Nayak</li>
-                    <li>Om Prakash Nayak</li>
-                    <li>Saubhagya Nayak – <span class="phone">8658354843</span></li>
-                    <li>Aleshya Sutar</li>
-                    <li>Gangulata Majhi</li>
+                    <li>Bidyadhar Sutar</li>
+                    <li>Premananda Majhi</li>
+                    <li>Bichitra Nayak</li>
+                    <li>Omm Prakash Nayak</li>
+                    <li>Saubhagya Nayak - <span class="phone">8658354843</span></li>
+                    <li>Akshya Sutar</li>
+                    <li>Sanjulata Majhi</li>
                     <li>Annapurna Majhi</li>
                     <li>Mayadhar Behera</li>
                     <li>Amulya Majhi</li>
-                    <li>Bindu Prasad Behera</li>
+                    <li>Jyotiranjan Behera - <span class="phone">8144879471</span></li>
+                    <li>Gyanedra Rout - <span class="phone">9348173277</span></li>
                 </ol>
             </div>
         </div>
@@ -138,18 +139,20 @@
             <h3 class="committee-header bg-warning text-dark">Food Committee</h3>
             <div class="committee-body">
                 <ol>
-                    <li>Lamudhar Majhi</li>
+                    <li>Laxmidhara Majhi</li>
                     <li>Umesh Ch. Nayak</li>
-                    <li>Sumendra Nayak</li>
+                    <li>Surendra Nayak</li>
                     <li>Gangadhar Barik</li>
                     <li>Sivananda Mallick</li>
                     <li>Ranjan Samal</li>
                     <li>Gangadhar Sutar</li>
-                    <li>Bilas Nayak</li>
-                    <li>Prasanta Patt</li>
-                    <li>Narendra Swain</li>
+                    <li>Bikas Nayak</li>
+                    <li>Prasanta Pati</li>
+                    <li>Narendra Swaim</li>
                     <li>Udaybhanu Mallick</li>
-                    <li>Bindu Prasad Behera</li>
+                    <li>Binduprasad Behera</li>
+                    <li>Jyotiranjan Pati - <span class="phone">9090459952</span></li>
+                    <li>Sukant Kumar Behera - <span class="phone">7977354576</span></li>
                 </ol>
             </div>
         </div>
@@ -159,26 +162,27 @@
             <h3 class="committee-header bg-danger">Media Committee</h3>
             <div class="committee-body">
                 <ol>
-                    <li>Bindu Prasad Behera</li>
-                    <li>Namita Majhi</li>
+                    <li>Binduprasad Behera</li>
+                    <li>Naresh Majhi</li>
                     <li>Om Prakash Nayak</li>
-                    <li>Himansu Nayak</li>
-                    <li>Manmohan Samal</li>
-                    <li>Abhaya Das</li>
-                    <li>Arjun Samal</li>
+                    <li>Himanshu Nayak</li>
+                    <li>Manmohan Samal Nayak</li>
+                    <li>Abhay Das</li>
+                    <li>Aruna k Samal</li>
+                    <li>Gyanendra Rout - <span class="phone">9348173277</span></li>
                 </ol>
             </div>
         </div>
 
         {{-- Adviser Committee --}}
         <div class="committee-card">
-            <h3 class="committee-header bg-secondary">Adviser Committee</h3>
+            <h3 class="committee-header bg-info">Adviser Committee</h3>
             <div class="committee-body">
                 <ol>
-                    <li>Ramakrishna Samal</li>
+                    <li>Ramakrisna Samal</li>
                     <li>Sital Behera</li>
                     <li>Narendra Samal</li>
-                    <li>Hrushikesh Panda</li>
+                    <li>Hrudananda Panda</li>
                     <li>Anirudha Nayak</li>
                     <li>Rathekar Panda</li>
                 </ol>
@@ -187,17 +191,18 @@
 
         {{-- Magazine Committee --}}
         <div class="committee-card">
-            <h3 class="committee-header bg-info">Magazine Committee</h3>
+            <h3 class="committee-header bg-secondary">Magazine Committee</h3>
             <div class="committee-body">
                 <ol>
-                    <li>Abhaya Suman</li>
+                    <li>Abhaya Sutar</li>
                     <li>Golak Nayak</li>
+                    <li>Aruna K Samal</li>
                     <li>Amulya Behera</li>
-                    <li>Kalacharan Sahu</li>
-                    <li>Brahmananda Majhi</li>
-                    <li>Dr. Lalatendu Tripathy</li>
-                    <li>Dr. Uddhaba Tripathy</li>
-                    <li>Rudrachanda Nayak</li>
+                    <li>Kadambini Dhal</li>
+                    <li>Bharati Majhi</li>
+                    <li>Bijay Tripathy</li>
+                    <li>Uday Ku. Samal</li>
+                    <li>Ratikanta Majhi</li>
                 </ol>
             </div>
         </div>
@@ -207,13 +212,14 @@
             <h3 class="committee-header bg-dark">Entertainment Committee</h3>
             <div class="committee-body">
                 <ol>
-                    <li>Amulya Majhi</li>
-                    <li>Pramod Sutar</li>
-                    <li>Ajit Majhi</li>
-                    <li>Amulya Behera</li>
-                    <li>Satyendra Biswal</li>
-                    <li>Mahendra Nayak</li>
-                    <li>Swaranjan Nayak</li>
+                    <li>Amulya Majhi - <span class="phone">7008796235</span></li>
+                    <li>Truna Sutar - <span class="phone">7872473922</span></li>
+                    <li>Ganesh Samal - <span class="phone">7789844729</span></li>
+                    <li>Ajit Majhi - <span class="phone">8457954115</span></li>
+                    <li>Amulya Bal - <span class="phone">9937824738</span></li>
+                    <li>Srikanta Behera - <span class="phone">7682954426</span></li>
+                    <li>Mahendra Biswal</li>
+                    <li>Biswaranjan Nayak - <span class="phone">7327030994</span></li>
                 </ol>
             </div>
         </div>
@@ -223,51 +229,64 @@
             <h3 class="committee-header bg-light text-dark">Clean Committee</h3>
             <div class="committee-body">
                 <ol>
-                    <li>Prasanta Patt</li>
-                    <li>Lamudhar Nayak</li>
-                    <li>Bikas Nayak</li>
+                    <li>Prasanta Pati</li>
+                    <li>Laxmidhara Nayak</li>
                 </ol>
             </div>
         </div>
 
-        {{-- Decoration Committee --}}
+        {{-- Discipline Committee --}}
         <div class="committee-card">
-            <h3 class="committee-header bg-primary">Decoration Committee</h3>
+            <h3 class="committee-header bg-primary">Discipline Committee</h3>
             <div class="committee-body">
                 <ol>
-                    <li>Chinmaya Swain</li>
-                    <li>Amulya Majhi</li>
-                    <li>Sivananda Majhi</li>
-                    <li>Kalia Behera</li>
-                    <li>Kadel Nayak</li>
-                    <li>Sada Nayak</li>
-                    <li>Om Prakash Nayak</li>
+                    <li>Bidyadhar Sutar</li>
+                    <li>Bichitra Nayak</li>
+                    <li>Ratikanta Majhi</li>
+                    <li>Ramakanta Lenka</li>
+                    <li>Shashadhar Behera</li>
+                    <li>Pradeep Pati</li>
+                    <li>Ashok Samal</li>
+                    <li>Bimal Nayak</li>
+                    <li>Gagan Nayak</li>
+                    <li>Ananta Nayak</li>
+                    <li>Udaybhanu Mallick </li>
+                    <li>Sankaranda Mallick - <span class="phone">9186162741</span></li>
                 </ol>
             </div>
         </div>
 
         {{-- Award Committee --}}
         <div class="committee-card">
-            <h3 class="committee-header bg-warning text-dark">Award Committee</h3>
+            <h3 class="committee-header bg-success">Award Committee</h3>
             <div class="committee-body">
                 <ol>
                     <li>Sital Behera</li>
-                    <li>Prabhat Tripathy</li>
-                    <li>Kulamani Sahu</li>
-                    <li>Bishwanath Majhi</li>
-                    <li>Ramakrishna Panda</li>
-                    <li>Shyamsundar Behera</li>
-                    <li>Pradeep Patt</li>
-                    <li>Arjun Samal</li>
-                    <li>Bimal Nayak</li>
-                    <li>Pramod Nayak</li>
-                    <li>Asutosh Tripathy</li>
-                    <li>Udaybhanu Mallick</li>
-                    <li>Kalicharan Nayak</li>
+                    <li>Manmohan Majhi</li>
+                    <li>Binayak Majhi</li>
+                    <li>Kulamani Samal</li>
+                    <li>Bichitra Nayak</li>
+                </ol>
+            </div>
+        </div>
+
+        {{-- Decoration Committee --}}
+        <div class="committee-card">
+            <h3 class="committee-header bg-warning text-dark">Decoration Committee</h3>
+            <div class="committee-body">
+                <ol>
+                    <li>Chinmaya Swain</li>
+                    <li>Amulya Majhi</li>
+                    <li>Sivananda Mallick</li>
+                    <li>Kalia Behera</li>
+                    <li>Badal Majhi</li>
+                    <li>Om Prakash Nayak</li>
+                    <li>Bikas Nayak - <span class="phone">9344064760</span></li>
                 </ol>
             </div>
         </div>
 
     </div>
 </div>
+
 @endsection

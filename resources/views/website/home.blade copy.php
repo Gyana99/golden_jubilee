@@ -2,7 +2,8 @@
 
 @section('title', 'Home | MyWebsite')
 <link rel="stylesheet" href="{{ asset('css/website/career.css') }}">
-
+<!-- Swiper CSS (CDN) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 @section('content')
 
 <!-- Employee section -->
