@@ -27,19 +27,24 @@
                         🎓 {{ __('Alumni') }}
                     </x-nav-link>
 
-                    {{-- Contributions --}}
-                    <x-nav-link :href="route('contributions.index')" :active="request()->routeIs('contributions.*')">
-                        💰 {{ __('Contributions') }}
+                    {{-- Gallry --}}
+                    <x-nav-link :href="route('gallery.index')" :active="request()->routeIs('gallery.*')">
+                        🖼️ {{ __('Gallery') }}
                     </x-nav-link>
 
-                    {{-- Magazine --}}
+                    {{-- Contributions 
+                    <x-nav-link :href="route('contributions.index')" :active="request()->routeIs('contributions.*')">
+                        💰 {{ __('Contributions') }}
+                    </x-nav-link> --}}
+
+                    {{-- Magazine 
                     <x-nav-link :href="route('magazines.index')" :active="request()->routeIs('magazines.*')">
                         📖 {{ __('Magazine') }}
-                    </x-nav-link>
-                    {{-- WhatsApp Bulk Message --}}
+                    </x-nav-link> --}}
+                    {{-- WhatsApp Bulk Message 
                     <x-nav-link :href="route('whatsapp.form')" :active="request()->routeIs('whatsapp.*')">
                         💬 {{ __('WhatsApp Message') }}
-                    </x-nav-link>
+                    </x-nav-link> --}}
                 </div>
 
             </div>
@@ -99,7 +104,9 @@
             <x-responsive-nav-link :href="route('events.index')" :active="request()->routeIs('events.*')">
                 🎭 {{ __('Events') }}
             </x-responsive-nav-link>
-
+            <x-responsive-nav-link :href="route('events.index')" :active="request()->routeIs('gallery.*')">
+                🖼️ {{ __('Gallry') }}
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('alumni.index')" :active="request()->routeIs('alumni.*')">
                 🎓 {{ __('Alumni') }}
             </x-responsive-nav-link>

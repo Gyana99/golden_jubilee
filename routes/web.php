@@ -4,6 +4,7 @@ use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WhatsAppController;
+use App\Http\Controllers\GalleryController;
 
 
 
@@ -29,7 +30,9 @@ Route::match(['post', 'get'], 'event-deatils', [App\Http\Controllers\EventContro
 Route::match(['post', 'get'], '/alumni-registration', [App\Http\Controllers\AlumniController::class, 'storeByUser'])->name('alumni-registration');
 Route::match(['post', 'get'], '/add-magazines', [App\Http\Controllers\MagazineController::class, 'addMagazineByUser'])->name('add-magazines');
 Route::match(['post', 'get'], '/contribution-deatils', [App\Http\Controllers\ContributionController::class, 'contributionDeatils'])->name('contribution-deatils');
+Route::match(['post', 'get'], '/memory', [App\Http\Controllers\GalleryController::class, 'getDataForView'])->name('memory');
 // routes/web.php
+
 Route::view('/all-members', 'website.members');
 
 
@@ -47,6 +50,7 @@ Route::get('/school-story', function () {
     return view('website.schoolstory');
 })->name('school-story');
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -58,6 +62,16 @@ Route::middleware('auth')->group(function () {
         ->name('alumni.approve');
     Route::resource('contributions', App\Http\Controllers\ContributionController::class);
 
+     // ✅ NEW GALLERY MODULE
+    Route::resource('gallery', App\Http\Controllers\GalleryController::class);
+
+    Route::match(['get', 'post', 'patch'], '/gallery/{id}/approve',
+        [App\Http\Controllers\GalleryController::class, 'approve']
+    )->name('gallery.approve');
+
+   // Route::resource('memory', App\Http\Controllers\EventController::class,'getDataForView');
+
+    
     Route::match(['get', 'post', 'patch'], '/events/{id}/cancel/{status}', [App\Http\Controllers\EventController::class, 'cancel'])
         ->name('events.cancel');
     Route::get('/whatsapp', [WhatsAppController::class, 'index'])->name('whatsapp.form');

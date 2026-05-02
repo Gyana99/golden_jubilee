@@ -19,9 +19,10 @@
         <div class="collapse navbar-collapse menu-section" id="navbarContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{ url('/') }}"><i class="fa-solid fa-house"></i></a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->is('event-deatils') ? 'active' : '' }}" href="{{ url('event-deatils') }}">କାର୍ୟକ୍ରମ</a></li>
+                <li class="nav-item"><a class="nav-link {{ request()->is('memory') ? 'active' : '' }}" href="{{ url('memory') }}">ସ୍ମୃତି</a></li>
+                <!-- <li class="nav-item"><a class="nav-link {{ request()->is('event-deatils') ? 'active' : '' }}" href="{{ url('event-deatils') }}">କାର୍ୟକ୍ରମ</a></li> -->
                 <li class="nav-item"><a class="nav-link {{ request()->is('all-members') ? 'active' : '' }}" href="{{ url('all-members') }}">ସଦସ୍ୟ</a></li>
-                <li class="nav-item"><a class="nav-link {{ request()->is('contribution-deatils') ? 'active' : '' }}" href="{{ url('contribution-deatils') }}">ଦାନ</a></li>
+                <!-- <li class="nav-item"><a class="nav-link {{ request()->is('contribution-deatils') ? 'active' : '' }}" href="{{ url('contribution-deatils') }}">ଦାନ</a></li> -->
                 <li class="nav-item"><a class="nav-link {{ request()->is('alumni-registration') ? 'active' : '' }}" href="{{ url('alumni-registration') }}">ପୂର୍ବ ଛାତ୍ରଛାତ୍ରୀ ପଞ୍ଜିକରଣ</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->is('school-story') ? 'active' : '' }}" href="{{ url('school-story') }}">ବିଦ୍ୟାଳୟ କାହାଣୀ</a></li>
                 <li class="nav-item"><a class="nav-link {{ request()->is('add-magazines') ? 'active' : '' }}" href="{{ url('add-magazines') }}">Magazines</a></li>
