@@ -154,9 +154,10 @@ class GalleryController extends Controller
     }
     public function getDataForView()
     {
-        
+
         $teachers = \App\Models\Gallery::where('category', 'teacher')
             ->where('status', 1)
+
             ->get();
 
         $events = \App\Models\Gallery::where('category', 'event')
